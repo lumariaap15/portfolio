@@ -1,0 +1,19 @@
+---
+title: "ProfetAI"
+description: "Argentina-focused price aggregator using SEPA open data, embeddings-based product normalization, and LLM-generated summaries."
+stack: ["Next.js", "Supabase pgvector", "OpenAI", "Telegram Bot API"]
+status: "en-progreso"
+featured: true
+date: "2026-05-10"
+---
+
+A price-tracking system for the Argentine market. Pulls SEPA open data, normalizes
+heterogeneous product names with embeddings, and surfaces LLM-generated price summaries —
+with a Telegram notification layer for price drops.
+
+The design principle driving it: **deterministic logic stays deterministic** (parsing,
+matching thresholds, alerts) and the LLM is reserved for the genuinely fuzzy tasks
+(normalization, summarization).
+
+{/* Slot para demo viva — reemplazá esto por tu componente interactivo */}
+<DemoSlot label="Demo interactiva próximamente" />

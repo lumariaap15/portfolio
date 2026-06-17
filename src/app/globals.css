@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* ── Paleta: dark cálido, no near-black genérico ── */
+  --color-ink: #0e0d0b;          /* fondo base, casi negro pero cálido */
+  --color-ink-soft: #16140f;     /* superficies elevadas */
+  --color-line: #2a2620;         /* hairlines */
+  --color-paper: #ece7dc;        /* texto principal, blanco hueso cálido */
+  --color-muted: #8c857a;        /* texto secundario */
+  --color-faint: #5a554c;        /* terciario / metadata */
+  --color-accent: #d98a3d;       /* ámbar cálido — el único acento */
+  --color-accent-soft: #b97a3a;
+
+  /* ── Tipografía ── */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selección con el acento (guiño a las "selection styles" del template) */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Focus visible para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
