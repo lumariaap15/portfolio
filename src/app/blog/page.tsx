@@ -4,7 +4,8 @@ import { blog } from "#content";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Writing — Luisa Alzate",
+  title: "Writing",
+  description: "Notes on AI engineering, fintech, and teaching code by Luisa Alzate.",
 };
 
 export default function BlogPage() {

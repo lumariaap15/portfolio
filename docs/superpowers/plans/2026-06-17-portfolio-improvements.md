@@ -1,3 +1,4 @@
+
 # Portfolio Improvements Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -36,13 +37,13 @@ Expected: `no-git` (or `true` if already a repo — then skip to Step 4).
 Run: `cat .gitignore`
 Expected: contains `node_modules`, `.next`, `.velite`. If `.velite` is missing, append it:
 
-```bash
+```sh
 printf '\n.velite\n' >> .gitignore
 ```
 
 - [ ] **Step 3: Initialize**
 
-```bash
+```sh
 git init && git add -A && git commit -m "chore: baseline before portfolio improvements"
 ```
 
@@ -92,7 +93,7 @@ Expected: background is pure black, text off-white, amber accents render. (Pink 
 
 - [ ] **Step 4: Commit**
 
-```bash
+```sh
 git add src/app/globals.css
 git commit -m "feat: apply new black/amber/pink palette"
 ```
@@ -164,7 +165,7 @@ Expected: no type errors.
 
 - [ ] **Step 3: Commit**
 
-```bash
+```sh
 git add src/lib/site.ts
 git commit -m "feat: add whatsapp, contact presets and hobbies to site data"
 ```
@@ -379,7 +380,7 @@ Expected: no errors (the `es` object must satisfy `Messages` — if a key is mis
 
 - [ ] **Step 6: Commit**
 
-```bash
+```sh
 git add src/i18n
 git commit -m "feat: add i18n core (provider, hooks, en/es messages, pick helper)"
 ```
@@ -420,7 +421,7 @@ Expected: no errors.
 
 - [ ] **Step 3: Commit**
 
-```bash
+```sh
 git add src/lib/contact.ts
 git commit -m "feat: add mailto and whatsapp link helpers"
 ```
@@ -526,7 +527,7 @@ Expected: completes; `.velite` regenerated with `credentials` and new fields. No
 
 - [ ] **Step 6: Commit**
 
-```bash
+```sh
 git add velite.config.ts
 git commit -m "feat: add locale fields and credentials collection to velite"
 ```
@@ -643,7 +644,7 @@ Expected: all files validate; collections include both locales and the two crede
 
 - [ ] **Step 7: Commit**
 
-```bash
+```sh
 git add content
 git commit -m "feat: localize content (en/es) and seed credentials"
 ```
@@ -782,9 +783,9 @@ export function Sidebar() {
 
       <div className="mt-8 flex items-center justify-between border-t border-(--color-line) pt-6">
         <div className="flex gap-4 font-mono text-xs text-(--color-muted)">
-          <a href={site.links.github} className="transition-colors hover:text-(--color-paper)">GitHub</a>
-          <a href={site.links.linkedin} className="transition-colors hover:text-(--color-paper)">LinkedIn</a>
-          <a href={site.links.cv} className="transition-colors hover:text-(--color-paper)">{t.cta.cv}</a>
+          <a target="_blank" href={site.links.github} className="transition-colors hover:text-(--color-paper)">GitHub</a>
+          <a target="_blank" href={site.links.linkedin} className="transition-colors hover:text-(--color-paper)">LinkedIn</a>
+          <a target="_blank" href={site.links.cv} className="transition-colors hover:text-(--color-paper)">{t.cta.cv}</a>
         </div>
         <LanguageToggle />
       </div>
@@ -834,7 +835,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 - [ ] **Step 4: Delete the old Nav**
 
-```bash
+```sh
 rm src/components/Nav.tsx
 ```
 
@@ -850,7 +851,7 @@ Expected: all true.
 
 - [ ] **Step 7: Commit**
 
-```bash
+```sh
 git add src/components/Sidebar.tsx src/components/LanguageToggle.tsx src/app/layout.tsx
 git rm src/components/Nav.tsx
 git commit -m "feat: persistent sidebar layout with photo, CTAs and language toggle"
@@ -1160,7 +1161,7 @@ Expected: all true.
 
 - [ ] **Step 5: Commit**
 
-```bash
+```sh
 git add src/app/page.tsx src/components/HomeSections.tsx
 git commit -m "feat: localized home with education and hobbies sections"
 ```
@@ -1264,7 +1265,7 @@ Run: `npm run dev`. Verify end to end:
 
 - [ ] **Step 7: Commit**
 
-```bash
+```sh
 git add src/components/Footer.tsx src/app/projects src/app/blog
 git commit -m "feat: contact CTAs in footer and locale-safe project routes"
 ```
@@ -1283,3 +1284,4 @@ git commit -m "feat: contact CTAs in footer and locale-safe project routes"
 - Fill real degree/certification data in `content/credentials/` and remove the `EDITAR` examples.
 - Review ES translations for tone.
 - Optional later: localize project/blog detail bodies fully (currently default to EN).
+
