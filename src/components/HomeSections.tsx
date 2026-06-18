@@ -25,6 +25,7 @@ export function HomeSections({
 }) {
   const t = useT();
   const { locale } = useLocale();
+  const showProjects = false;
 
   // pick locale variant of rich-body collections, fall back to en
   const byLocale = <T extends { slug: string; locale: string }>(items: T[]) => {
@@ -236,7 +237,7 @@ export function HomeSections({
       </Section>
 
       {/* PROJECTS */}
-      {featured.length > 0 && (
+      {featured.length > 0 && showProjects && (
         <Section id="projects" eyebrow={t.sections.projectsEyebrow} title={t.sections.projectsTitle}>
           <div className="grid grid-cols-1 gap-6">
             {featured.map((project) => (

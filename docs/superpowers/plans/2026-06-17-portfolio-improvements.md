@@ -257,9 +257,9 @@ export const es: Messages = {
   },
   hero: {
     pre: "Ingeniera de Software Full-Stack",
-    lineA: "Construyendo software",
-    keyword: "centrado en las personas",
-    lineB: "y de vanguardia.",
+    lineA: "Construyendo soluciones",
+    keyword: "modernas",
+    lineB: "pensadas en las personas.",
     blurb: "años en fintech, e-commerce y plataformas empresariales — ahora expandiéndome hacia AI engineering. Desde",
   },
   sections: {
@@ -267,7 +267,7 @@ export const es: Messages = {
     experienceTitle: "Dónde trabajé",
     skillsEyebrow: "02 — Skills",
     skillsTitle: "Con qué trabajo",
-    workingKnowledge: "Conocimiento práctico · creciendo",
+    workingKnowledge: "En proceso · creciendo",
     learningEyebrow: "03 — Aprendiendo ahora",
     learningTitle: "Dónde estoy creciendo",
     educationEyebrow: "04 — Educación y Certificaciones",

@@ -48,17 +48,17 @@ export const site = {
 	},
 	hobbies: {
 		en: [
-			{ emoji: "🎸", text: "Music & playing guitar" },
 			{ emoji: "☕", text: "Specialty coffee" },
 			{ emoji: "📚", text: "Reading" },
-			{ emoji: "✈️", text: "Travel" },
+			{ emoji: "🎲", text: "Board games" },
 		],
 		es: [
-			{ emoji: "🎸", text: "Música y tocar la guitarra" },
 			{ emoji: "☕", text: "Café de especialidad" },
 			{ emoji: "📚", text: "Lectura" },
-			{ emoji: "✈️", text: "Viajar" },
+			{ emoji: "🎲", text: "Juegos de mesa" },
 		],
 	},
 };
+
+
 

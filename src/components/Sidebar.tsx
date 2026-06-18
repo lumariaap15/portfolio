@@ -74,7 +74,7 @@ export function Sidebar() {
     { href: "/#skills", label: t.nav.skills },
     { href: "/#learning", label: t.nav.learning },
     { href: "/#education", label: t.nav.education },
-    { href: "/projects", label: t.nav.projects },
+    //{ href: "/projects", label: t.nav.projects },
   ];
 
   return (
