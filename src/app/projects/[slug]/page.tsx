@@ -5,7 +5,7 @@ import { projects } from "#content";
 import { MDXContent } from "@/components/MDXContent";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return [...new Set(projects.map((p) => p.slug))].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -14,8 +14,20 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  return { title: project ? `${project.title} — Luisa Alzate` : "Project" };
+  const project = projects.find((p) => p.slug === slug && p.locale === "en")
+    ?? projects.find((p) => p.slug === slug);
+  if (!project) return { title: "Project" };
+  return {
+    title: project.title,
+    description: project.description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+      type: "article",
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -24,7 +36,8 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slug === slug && p.locale === "en")
+    ?? projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   return (

@@ -4,11 +4,15 @@ import { projects } from "#content";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Projects — Luisa Alzate",
+  title: "Projects",
+  description: "Selected software engineering and AI projects by Luisa Alzate.",
 };
 
 export default function ProjectsPage() {
-  const sorted = [...projects].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
+  const byEn = projects.filter((p) => p.locale === "en");
+  const seen = new Set(byEn.map((p) => p.slug));
+  const list = [...byEn, ...projects.filter((p) => p.locale === "es" && !seen.has(p.slug))];
+  const sorted = [...list].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
 
   return (
     <section className="py-20">
