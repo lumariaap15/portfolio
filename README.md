@@ -1,109 +1,76 @@
-# Portfolio — Luisa Alzate
+# luisaalzate.dev
 
-Personal portfolio built with **Next.js 16 + Tailwind v4 + Velite (MDX)**.
-Content lives as `.mdx` files in `content/` — edit a file, push, and Vercel redeploys.
+Commercial site for Luisa Alzate, Independent Software Engineer. Built with
+**Next.js 16 (App Router) + Tailwind v4 + Velite (MDX)**, served at `/en` and
+`/es` via route-based i18n.
 
 ## Stack
 
-- **Next.js 16** (App Router, static generation)
-- **Tailwind CSS v4** (design tokens in `src/app/globals.css`)
-- **Velite** — Git-as-CMS: typed content collections from MDX
-- **Motion** — scroll reveals and micro-interactions
+- **Next.js 16** (App Router, static generation, `src/proxy.ts` for locale routing)
+- **Tailwind CSS v4** (design tokens in `src/app/globals.css` — light theme, single accent color)
+- **Velite** — Git-as-CMS for the "Selected Work" case studies
+- **Resend** — sends the contact-form lead email (`src/app/api/contact/route.ts`)
+- **Motion** — hero entrance animation only (kept deliberately minimal)
+
+Marketing copy (hero, services, process, FAQ, etc.) lives as typed dictionaries in
+`src/i18n/messages/en.ts` / `es.ts` — not MDX, since it's short structured UI copy
+rather than long-form content.
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev     # runs velite + next dev
+cp .env.example .env.local   # fill in RESEND_API_KEY to test the contact form
+npm run dev                  # runs velite + next dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000 — it redirects to `/en` or `/es` based on `Accept-Language`.
 
 `npm run build` runs Velite first, then the Next build.
 
-## How the CMS works
+## i18n routing
 
-All content is MDX under `content/`. Each folder is a collection defined in
-`velite.config.ts`. To update the site, you edit or add a file — no admin panel,
-no external service.
+`src/proxy.ts` redirects `/` to `/en` or `/es`. `src/app/[locale]/layout.tsx` and
+`page.tsx` render per locale, with `generateStaticParams` for both. Add a locale by
+extending `locales` in `src/i18n/getMessages.ts` and adding a `messages/<locale>.ts`
+dictionary satisfying the `Messages` type.
 
-```
-content/
-  experience/   -> work history       (one .mdx per job)
-  skills/        -> skills + years     (grouped, core vs working)
-  learning/      -> what you're learning now
-  projects/      -> project case studies (supports embedded demos)
-  blog/          -> posts (empty for now)
-```
+## Selected Work (case studies)
 
-### Add a job
-Create `content/experience/company-name.mdx`:
+Each case study is a pair of MDX files in `content/projects/`:
 
 ```mdx
 ---
-company: "Company"
-role: "Your Role"
-context: "Industry - Location"
-start: "Jan 2025"
-end: "Present"
-order: 4          # higher = shown first
+title: "Case study title"
+description: "One-line summary."
+category: "custom" | "integration" | "modernization"
+problem: "..."
+approach: "..."
+outcome: "..."
 stack: ["Next.js", "PostgreSQL"]
-summary: "One-line description."
----
-
-Bullet points and details in Markdown here.
-```
-
-### Add a "currently learning" item
-Create `content/learning/topic.mdx`:
-
-```mdx
----
-topic: "LangGraph"
-category: "AI Engineering"
-note: "What you're doing with it and why."
-active: true
-order: 4
+featured: true   # shows on the homepage — exactly one per category is shown
+locale: "en"      # matching .es.mdx file uses locale: "es"
 ---
 ```
 
-### Add a project (with a live demo slot)
-Create `content/projects/name.mdx`. Inside the body you can embed React:
-
-```mdx
----
-title: "Project"
-description: "Short description."
-stack: ["Next.js", "OpenAI"]
-status: "en-progreso"   # en-progreso | completado | concepto
-featured: true          # shows on the home page
----
-
-Write the case study. Embed a live AI demo with:
-
-<DemoSlot label="Demo coming soon" />
-```
-
-When you build a real demo, replace `DemoSlot` with your own interactive
-component (register it in `src/components/MDXContent.tsx`).
+Several of the current case studies are marked `PLACEHOLDER` in their `outcome`
+field and with an MDX comment — review and confirm real metrics before treating
+them as final marketing copy.
 
 ## Before deploying — fill in your details
 
 Edit `src/lib/site.ts`:
-- `links.github` and `links.linkedin` (currently placeholders)
-- confirm `email` and `stats`
+- `bookingUrl` — currently a placeholder Cal.com link, replace with the real one
+- `links.github` / `links.linkedin` — confirm these are correct
+- `email`
 
-The skill-year numbers in `content/skills/*.mdx` are estimates derived from the CV —
-review and adjust.
+Set `RESEND_API_KEY` (see `.env.example`) in your deploy environment so the
+contact form can send email — the `from` address in `src/app/api/contact/route.ts`
+uses Resend's sandbox sender until a `luisaalzate.dev` sender is verified.
 
 ## Deploy to Vercel
 
 1. Push this repo to GitHub.
 2. Import it in Vercel (it auto-detects Next.js).
-3. No env vars needed. Done.
-
-Custom domain: add it in Vercel project settings -> Domains.
-
-## Next steps (roadmap)
-
-See ROADMAP.md.
+3. Add the `RESEND_API_KEY` env var.
+4. Point the `luisaalzate.dev` domain at it in Vercel project settings → Domains.

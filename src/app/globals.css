@@ -1,128 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* ── Paleta: negro puro + ámbar (primario) + rosa (secundario) ── */
-  --color-ink: #000000;          /* fondo base */
-  --color-ink-soft: #1a1a1a;     /* superficies elevadas (cards) */
-  --color-line: #323232;         /* hairlines / borders */
-  --color-paper: #f5f3ef;        /* texto principal */
-  --color-muted: #a8a8a8;        /* texto secundario */
-  --color-faint: #6b6b6b;        /* terciario / metadata */
-  --color-accent: #ffac41;       /* ámbar — acento primario */
-  --color-accent-soft: #e0962f;  /* ámbar hover/pressed */
-  --color-accent-2: #ff1e56;     /* rosa — acento secundario */
+  /* ── Paleta: papel cálido + tinta + una sola tinta de acento (ribbon red) ── */
+  --color-paper: #f6f3ec;        /* papel base */
+  --color-paper-soft: #efe9db;   /* superficies elevadas (inputs, etc.) */
+  --color-line: #ded7c8;         /* hairlines / borders */
+  --color-ink: #221f1a;          /* texto principal */
+  --color-muted: #6b6255;        /* texto secundario */
+  --color-faint: #6b6255;        /* alias de muted — una sola voz secundaria */
+  --color-accent: #9a3324;       /* typewriter-ribbon red — AA on paper */
+  --color-accent-soft: #7a281c;  /* hover/pressed */
+  --color-accent-bg: #f1e2dd;    /* wash sutil */
 
-  /* ── Tipografía ── */
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* ── Tipografía: una sola voz (typewriter) + una firma manuscrita ── */
+  --font-type: var(--font-courier), ui-monospace, "SFMono-Regular", monospace;
+  --font-hand: var(--font-caveat), cursive;
+
+  /* ── Layout ── */
+  --header-h: 3.5rem;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-type);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.entry {
+  padding-top: calc(var(--header-h) + 4rem);
+  padding-bottom: 6rem;
+}
+
+.entry:not(:first-child) {
+  border-top: 1px solid var(--color-line);
+}
+
+@keyframes caret-blink {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.caret-blink {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-body {
-  background: var(--color-ink);
-  color: var(--color-paper);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* Selección con el acento (guiño a las "selection styles" del template) */
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-paper);
 }
 
-/* Focus visible para accesibilidad */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* ── Gradiente firma: ámbar → rosa (utilidades Tailwind v4) ──────── */
-@utility text-gradient {
-  background-image: linear-gradient(115deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-@utility bg-gradient-accent {
-  background-image: linear-gradient(115deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
-}
-/* Borde en gradiente (truco doble-background) */
-@utility ring-gradient {
-  background:
-    linear-gradient(var(--color-ink-soft), var(--color-ink-soft)) padding-box,
-    linear-gradient(140deg, var(--color-accent), var(--color-accent-2)) border-box;
-  border: 1px solid transparent;
+/* Browser chrome carries the palette too, not just the content. */
+* {
+  scrollbar-color: var(--color-muted) transparent;
+  scrollbar-width: thin;
 }
 
-/* ── Glows de fondo (manchas suaves de color) ────────────────────── */
-@utility glow {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(70px);
-  pointer-events: none;
-  z-index: 0;
-}
-@utility glow-amber { background: var(--color-accent); }
-@utility glow-pink { background: var(--color-accent-2); }
-
-/* Línea decorativa con gradiente */
-@utility divider-gradient {
-  height: 1px;
-  background-image: linear-gradient(90deg, var(--color-accent), var(--color-accent-2), transparent);
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-/* ── Animaciones ─────────────────────────────────────────────────── */
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-2) 70%, transparent); }
-  70% { box-shadow: 0 0 0 6px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
-@utility status-dot { animation: pulse-ring 2s infinite; }
-
-@keyframes float-y {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -7px, 0); }
-}
-@utility animate-float {
-  animation: float-y 9s ease-in-out infinite;
-  will-change: transform;
-  backface-visibility: hidden;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-@utility animate-spin-slow {
-  animation: spin-slow 140s linear infinite;
-  will-change: transform;
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-line);
+  border-radius: 999px;
+  border: 2px solid var(--color-paper);
 }
 
-/* Drift muy lento para los glows de fondo (sensación de "fondo vivo") */
-@keyframes drift {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -14px, 0); }
-}
-@utility animate-drift {
-  animation: drift 42s ease-in-out infinite;
-  will-change: transform;
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted);
 }
