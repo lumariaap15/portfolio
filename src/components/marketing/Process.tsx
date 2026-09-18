@@ -1,31 +1,21 @@
-"use client";
-
 import { site } from "@/lib/site";
 import type { Messages } from "@/i18n/getMessages";
 import { Entry } from "./pipeline/Entry";
-import { ListDetail } from "./pipeline/ListDetail";
 
 export function Process({ t }: { t: Messages }) {
-  const items = t.process.steps.map((step) => ({ ...step, id: step.number }));
-
   return (
-    <Entry id="process" center>
-      <div className="mx-auto w-full max-w-4xl">
+    <Entry id="process">
+      <div className="mx-auto w-full max-w-3xl">
         <h2 className="font-bold text-3xl tracking-tight text-(--color-ink) sm:text-4xl">{t.process.title}</h2>
         <p className="mt-3 max-w-xl leading-relaxed text-(--color-muted)">{t.process.subtitle}</p>
 
-        <ListDetail
-          items={items}
-          ariaLabel={t.process.title}
-          renderRow={(step) => (
-            <span className="flex flex-col gap-0.5">
-              <span className="text-[11px] tabular-nums text-(--color-faint)">{step.number}</span>
-              <span>{step.label}</span>
-            </span>
-          )}
-          renderDetail={(step) => (
-            <div>
-              <h3 className="font-bold text-xl text-(--color-ink) sm:text-2xl">{step.title}</h3>
+        <div className="mt-10 flex flex-col">
+          {t.process.steps.map((step) => (
+            <div key={step.number} className="border-t border-(--color-line) py-8 first:border-t-0 first:pt-0">
+              <div className="flex items-baseline gap-3">
+                <span className="text-sm tabular-nums text-(--color-faint)">{step.number}</span>
+                <h3 className="font-bold text-xl text-(--color-ink) sm:text-2xl">{step.title}</h3>
+              </div>
               <p className="mt-3 max-w-xl leading-relaxed text-(--color-muted)">{step.body}</p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {step.tags.map((tag) => (
@@ -43,8 +33,8 @@ export function Process({ t }: { t: Messages }) {
                 </a>
               )}
             </div>
-          )}
-        />
+          ))}
+        </div>
       </div>
     </Entry>
   );

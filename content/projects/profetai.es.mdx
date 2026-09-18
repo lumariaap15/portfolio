@@ -3,14 +3,14 @@ title: "ProfetAI"
 description: "Agregador de precios enfocado en Argentina que usa datos abiertos de SEPA, normalización de productos basada en embeddings y resúmenes generados por LLM."
 category: "custom"
 problem: "Seguir cambios de precios entre muchos comercios chicos con nombres de producto inconsistentes, usando los datos abiertos de SEPA en Argentina."
-approach: "Construí una app en Next.js que consume datos de SEPA, normaliza nombres de productos con embeddings (pgvector) y usa un LLM solo para las tareas genuinamente difusas (normalización, resumen) — manteniendo la lógica de matching y alertas determinística."
-outcome: "PLACEHOLDER — agregar números reales de uso (SKUs seguidos, suscriptores activos) cuando estén disponibles."
+approach: "Construí una app en Next.js que consume datos de SEPA, normaliza nombres de productos con embeddings (pgvector) y usa un LLM solo para las tareas genuinamente difusas (normalización, resumen), manteniendo la lógica de matching y alertas determinística."
+outcome: "PLACEHOLDER: agregar números reales de uso (SKUs seguidos, suscriptores activos) cuando estén disponibles."
 stack: ["Next.js", "Supabase pgvector", "OpenAI", "Telegram Bot API"]
 featured: false
 date: "2026-05-10"
 locale: "es"
 ---
 
-Un sistema de seguimiento de precios para el mercado argentino. Consume datos abiertos de SEPA, normaliza nombres de productos heterogéneos con embeddings y presenta resúmenes de precios generados por LLM — con una capa de notificaciones por Telegram para alertas de bajadas de precio.
+Un sistema de seguimiento de precios para el mercado argentino. Consume datos abiertos de SEPA, normaliza nombres de productos heterogéneos con embeddings y presenta resúmenes de precios generados por LLM, con una capa de notificaciones por Telegram para alertas de bajadas de precio.
 
 El principio de diseño que lo guía: **la lógica determinística se mantiene determinística** (parsing, umbrales de matching, alertas) y el LLM se reserva para las tareas genuinamente difusas (normalización, resumen).

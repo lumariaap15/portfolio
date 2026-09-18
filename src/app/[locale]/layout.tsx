@@ -37,11 +37,11 @@ export async function generateMetadata({
   const locale: Locale = isLocale(raw) ? raw : "en";
   const t = getMessages(locale);
 
-  const title = `${site.name} — ${site.role}`;
+  const title = `${site.name} · ${site.role}`;
 
   return {
     metadataBase: new URL(site.url),
-    title: { default: title, template: `%s — ${site.name}` },
+    title: { default: title, template: `%s · ${site.name}` },
     description: t.hero.sub,
     keywords: [
       "custom software development",

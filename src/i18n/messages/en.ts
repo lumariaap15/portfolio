@@ -15,7 +15,7 @@ export const en = {
   },
   hero: {
     headline: "More technology isn't better technology.",
-    sub: "Software, automations, integrations and AI solutions that really matter for your business.",
+    sub: "I build software, automations, integrations and AI solutions that really matter for your business.",
   },
   philosophy: {
     title: "You don't need custom software. Unless you actually do.",
@@ -33,8 +33,7 @@ export const en = {
         label: "Custom Software & Product Development",
         headline: "Build what matters.",
         body: [
-          "Have an idea, an MVP to build, or a business need that existing tools can't solve? I can take it from early definition to working software in production.",
-          "Customer portals, SaaS products, operational platforms, dashboards and MVPs built around real business needs.",
+          "Have an idea or a business need existing tools can't solve? I take it from early definition to working software in production: customer portals, SaaS products, dashboards, MVPs.",
         ],
         tags: ["Custom software", "SaaS", "Portals", "Dashboards", "MVPs"],
       },
@@ -44,7 +43,7 @@ export const en = {
         label: "API & Systems Integrations",
         headline: "Make what you already have work together.",
         body: [
-          "Your tools shouldn't create more work. I connect your systems through reliable APIs and integrations so data moves where it needs to, without replacing software that's already doing its job.",
+          "Your tools shouldn't create more work. I connect your systems with reliable APIs so data moves where it needs to, without replacing what's already doing its job.",
         ],
         tags: ["APIs", "Webhooks", "Payments", "Authentication", "Data sync", "Third-party platforms"],
       },
@@ -54,20 +53,11 @@ export const en = {
         label: "Product Modernization & Rescue",
         headline: "Improve before you rebuild.",
         body: [
-          "Existing software doesn't always need to start over. I improve products that have become slow, fragile, difficult to maintain or aren't ready for their next stage.",
-          "I can also help turn a quickly built or AI-generated MVP into software that's ready for real users.",
+          "Existing software doesn't always need to start over. I fix what's become slow, fragile or hard to maintain, including turning a quick AI-built MVP into something ready for real users.",
         ],
         tags: ["Performance", "Architecture", "UX", "Accessibility", "Testing", "Observability", "Production readiness"],
       },
     ],
-  },
-  ai: {
-    title: "AI when it matters.",
-    body: [
-      "Not every product needs AI. When there's a real use case, I integrate it where it can make the product or the business meaningfully better.",
-      "Intelligent search, document processing, assistants, structured extraction and AI-powered workflows.",
-    ],
-    highlight: "The goal isn't to add AI. It's to solve the problem better.",
   },
   process: {
     title: "From problem to production.",
@@ -138,12 +128,7 @@ export const en = {
   },
   about: {
     title: "Hi, I'm Luisa.",
-    body: [
-      "I'm a full-stack software engineer with 5+ years of experience building, integrating and improving production software.",
-      "I've worked across frontend, backend, APIs and cloud infrastructure, with a strong focus on product quality and the people using what I build.",
-      "Today I work directly with businesses and product teams that need thoughtful engineering without the overhead of a large development team.",
-    ],
-    location: "Based in Argentina. Working worldwide.",
+    body: "I build, integrate and fix software that actually works for the people using it.",
   },
   faq: {
     title: "Frequently asked questions.",
@@ -187,21 +172,23 @@ export const en = {
     body: "Bring your business problem, an idea you'd like to build, or software that isn't working the way it should.",
     noSolutionLine: "You don't need to know the technical solution yet.",
     note: "No commitment. Just a conversation about what makes sense.",
+    photoAlt: "Luisa teaching a software workshop",
   },
   footer: {
     rights: "All rights reserved",
   },
   contactForm: {
-    title: "Send project details",
+    title: "Tell me your idea.",
     name: "Name",
     email: "Email",
     company: "Company",
     companyOptional: "Company (optional)",
     project: "What are you trying to solve/build?",
+    projectPlaceholder: "For example: I want to automate repetitive tasks, connect my tools, or build an app. How do you do it today, and what would you like to improve?",
     website: "Website (optional)",
     submit: "Send →",
     sending: "Sending…",
-    success: "Thanks — I'll get back to you within a couple of days.",
+    success: "Thanks! I'll get back to you within a couple of days.",
     error: "Something went wrong sending this. Please email me directly instead.",
   },
 };

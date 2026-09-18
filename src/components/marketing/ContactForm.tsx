@@ -45,8 +45,9 @@ export function ContactForm({ t }: { t: Messages["contactForm"] }) {
           id="project"
           name="project"
           required
-          rows={4}
-          className="rounded-md border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
+          rows={6}
+          placeholder={t.projectPlaceholder}
+          className="placeholder:text-(--color-muted) rounded-md border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
         />
       </div>
       <Field label={t.website} name="website" />

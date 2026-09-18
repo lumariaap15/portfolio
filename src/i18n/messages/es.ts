@@ -17,7 +17,7 @@ export const es: Messages = {
   },
   hero: {
     headline: "Más tecnología no significa mejor tecnología.",
-    sub: "Software, automatizaciones, integraciones y soluciones con IA que realmente aportan valor a tu negocio.",
+    sub: "Construyo software, automatizaciones, integraciones y soluciones con IA que realmente aportan valor a tu negocio.",
   },
   philosophy: {
     title: "No necesitas software a medida. A menos que realmente lo necesites.",
@@ -35,8 +35,7 @@ export const es: Messages = {
         label: "Software y Productos a Medida",
         headline: "Construye lo que importa.",
         body: [
-          "¿Tienes una idea, un MVP por construir o una necesidad que las herramientas existentes no resuelven? Puedo llevarla desde la definición inicial hasta software funcionando en producción.",
-          "Portales de clientes, productos SaaS, plataformas operativas, dashboards y MVPs construidos alrededor de necesidades reales.",
+          "¿Tienes una idea o una necesidad que las herramientas actuales no resuelven? La llevo desde la definición inicial hasta software funcionando en producción: portales, productos SaaS, dashboards, MVPs.",
         ],
         tags: ["Software a medida", "SaaS", "Portales", "Dashboards", "MVPs"],
       },
@@ -46,7 +45,7 @@ export const es: Messages = {
         label: "Integraciones de APIs y Sistemas",
         headline: "Haz que lo que ya tienes funcione en conjunto.",
         body: [
-          "Tus herramientas no deberían generar más trabajo. Conecto tus sistemas mediante APIs e integraciones confiables para que la información fluya donde la necesitas, sin reemplazar software que ya funciona bien.",
+          "Tus herramientas no deberían generar más trabajo. Conecto tus sistemas con APIs confiables para que la información fluya donde la necesitas, sin reemplazar lo que ya funciona bien.",
         ],
         tags: ["APIs", "Webhooks", "Pagos", "Autenticación", "Sincronización de datos", "Plataformas externas"],
       },
@@ -56,20 +55,11 @@ export const es: Messages = {
         label: "Modernización y Rescate de Producto",
         headline: "Mejora antes de reconstruir.",
         body: [
-          "El software existente no siempre necesita empezar de cero. Mejoro productos que se han vuelto lentos, frágiles, difíciles de mantener o que todavía no están preparados para su siguiente etapa.",
-          "También puedo ayudarte a convertir un MVP construido rápidamente o con IA en software preparado para usuarios reales.",
+          "El software existente no siempre necesita empezar de cero. Mejoro lo que se volvió lento, frágil o difícil de mantener, incluso convertir un MVP hecho con IA en software listo para usuarios reales.",
         ],
         tags: ["Performance", "Arquitectura", "UX", "Accesibilidad", "Testing", "Observabilidad", "Producción"],
       },
     ],
-  },
-  ai: {
-    title: "IA cuando aporta valor.",
-    body: [
-      "No todos los productos necesitan IA. Cuando existe un caso de uso real, la integro donde pueda mejorar de forma significativa el producto o el negocio.",
-      "Búsqueda inteligente, procesamiento de documentos, asistentes, extracción estructurada y workflows con IA.",
-    ],
-    highlight: "El objetivo no es agregar IA. Es resolver mejor el problema.",
   },
   process: {
     title: "Del problema a producción.",
@@ -140,12 +130,7 @@ export const es: Messages = {
   },
   about: {
     title: "Hola, soy Luisa.",
-    body: [
-      "Soy ingeniera de software full-stack con más de 5 años de experiencia construyendo, integrando y mejorando software en producción.",
-      "He trabajado en frontend, backend, APIs e infraestructura cloud, con un fuerte enfoque en la calidad del producto y en las personas que usan lo que construyo.",
-      "Hoy trabajo directamente con empresas y equipos de producto que necesitan buen engineering sin la estructura de un gran equipo de desarrollo.",
-    ],
-    location: "Desde Argentina, trabajando con clientes en cualquier lugar.",
+    body: "Construyo, integro y arreglo software que realmente funciona para quienes lo usan.",
   },
   faq: {
     title: "Preguntas frecuentes.",
@@ -189,21 +174,23 @@ export const es: Messages = {
     body: "Cuéntame un problema de tu negocio, una idea que quieras construir o un software que no esté funcionando como debería.",
     noSolutionLine: "No necesitas tener definida la solución técnica.",
     note: "Sin compromiso. Una conversación para entender cuál puede ser el mejor camino.",
+    photoAlt: "Luisa dando un taller de software",
   },
   footer: {
     rights: "Todos los derechos reservados",
   },
   contactForm: {
-    title: "Contame tu proyecto",
+    title: "Cuéntame tu idea.",
     name: "Nombre",
     email: "Email",
     company: "Empresa",
     companyOptional: "Empresa (opcional)",
     project: "¿Qué estás tratando de resolver/construir?",
+    projectPlaceholder: "Por ejemplo: quiero automatizar tareas repetitivas, conectar mis herramientas o crear una app. ¿Cómo lo haces hoy y qué te gustaría mejorar?",
     website: "Sitio web (opcional)",
     submit: "Enviar →",
     sending: "Enviando…",
-    success: "Gracias — te voy a responder en un par de días.",
+    success: "¡Gracias! Te voy a responder en un par de días.",
     error: "Algo salió mal al enviar esto. Por favor escribime directamente por email.",
   },
 };

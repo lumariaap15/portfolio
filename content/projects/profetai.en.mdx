@@ -3,8 +3,8 @@ title: "ProfetAI"
 description: "Argentina-focused price aggregator using SEPA open data, embeddings-based product normalization, and LLM-generated summaries."
 category: "custom"
 problem: "Tracking price changes across many small retailers with inconsistent product names in Argentina's SEPA open data."
-approach: "Built a Next.js app that ingests SEPA open data, normalizes product names with pgvector embeddings, and uses an LLM only for the genuinely fuzzy steps (normalization, summarization) — keeping matching and alerting logic deterministic."
-outcome: "PLACEHOLDER — add real usage numbers (tracked SKUs, active subscribers) once available."
+approach: "Built a Next.js app that ingests SEPA open data, normalizes product names with pgvector embeddings, and uses an LLM only for the genuinely fuzzy steps (normalization, summarization), keeping matching and alerting logic deterministic."
+outcome: "PLACEHOLDER: add real usage numbers (tracked SKUs, active subscribers) once available."
 stack: ["Next.js", "Supabase pgvector", "OpenAI", "Telegram Bot API"]
 featured: false
 date: "2026-05-10"
@@ -12,7 +12,7 @@ locale: "en"
 ---
 
 A price-tracking system for the Argentine market. Pulls SEPA open data, normalizes
-heterogeneous product names with embeddings, and surfaces LLM-generated price summaries —
+heterogeneous product names with embeddings, and surfaces LLM-generated price summaries,
 with a Telegram notification layer for price drops.
 
 The design principle driving it: **deterministic logic stays deterministic** (parsing,

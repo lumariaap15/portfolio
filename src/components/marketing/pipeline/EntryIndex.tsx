@@ -8,14 +8,14 @@ function entryLabel(id: EntryId, t: Messages): string | null {
   switch (id) {
     case "hero":
       return null;
+    case "about":
+      return t.nav.about;
     case "services":
       return t.nav.services;
     case "process":
       return t.nav.process;
     case "work":
       return t.nav.work;
-    case "about":
-      return t.nav.about;
     case "faq":
       return t.nav.faq;
     case "contact":

@@ -5,7 +5,6 @@ import { Hero } from "@/components/marketing/Hero";
 import { Services } from "@/components/marketing/Services";
 import { Process } from "@/components/marketing/Process";
 import { SelectedWork } from "@/components/marketing/SelectedWork";
-import { Profile } from "@/components/marketing/Profile";
 import { Faq } from "@/components/marketing/Faq";
 import { FinalCta } from "@/components/marketing/FinalCta";
 
@@ -35,7 +34,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Services t={t} />
       <Process t={t} />
       <SelectedWork t={t} caseStudies={caseStudies} />
-      <Profile t={t} />
       <Faq t={t} />
       <FinalCta t={t} locale={locale} />
     </main>

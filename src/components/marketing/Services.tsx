@@ -1,44 +1,40 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useReducedMotion } from "motion/react";
 import type { Messages } from "@/i18n/getMessages";
 import { Entry } from "./pipeline/Entry";
-import { ListDetail } from "./pipeline/ListDetail";
+import { ServiceItemContent } from "./pipeline/ServiceItemContent";
+import { ServicesReel } from "./pipeline/ServicesReel";
 
 export function Services({ t }: { t: Messages }) {
-  const items = t.services.items.map((service) => ({ ...service, id: service.number }));
+  const prefersReduced = useReducedMotion();
+  // Keep the expanded feature lists in normal flow on small or short screens.
+  const [reel, setReel] = useState(false);
+  useEffect(() => {
+    const roomyViewport = window.matchMedia("(min-width: 768px) and (min-height: 900px)");
+    const updateLayout = () => setReel(prefersReduced === false && roomyViewport.matches);
+    updateLayout();
+    roomyViewport.addEventListener("change", updateLayout);
+    return () => roomyViewport.removeEventListener("change", updateLayout);
+  }, [prefersReduced]);
 
   return (
-    <Entry id="services">
-      <div className="mx-auto w-full max-w-4xl">
-        <h2 className="font-bold text-3xl tracking-tight text-(--color-ink) sm:text-4xl">{t.services.title}</h2>
-
-        <ListDetail
-          items={items}
-          ariaLabel={t.services.title}
-          renderRow={(service) => <span>{service.label}</span>}
-          renderDetail={(service) => (
-            <div>
-              <h3 className="font-bold text-2xl tracking-tight text-(--color-ink) sm:text-3xl">{service.headline}</h3>
-              <div className="mt-4 max-w-xl space-y-4 leading-relaxed text-(--color-muted)">
-                {service.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+    <Entry id="services" bleed={reel}>
+      {reel ? (
+        <ServicesReel t={t} />
+      ) : (
+        <div className="mx-auto w-full max-w-3xl">
+          <h2 className="font-bold text-3xl tracking-tight text-(--color-ink) sm:text-4xl">{t.services.title}</h2>
+          <div className="mt-10 flex flex-col">
+            {t.services.items.map((service) => (
+              <div key={service.number} className="border-t border-(--color-line) py-8 first:border-t-0 first:pt-0">
+                <ServiceItemContent service={service} />
               </div>
-              <p className="mt-6 max-w-xl text-sm text-(--color-ink)">{service.tags.join(" · ")}</p>
-            </div>
-          )}
-        />
-
-        <div className="mt-16 border-t border-(--color-line) pt-10">
-          <h3 className="font-bold text-xl text-(--color-ink) sm:text-2xl">{t.ai.title}</h3>
-          <div className="mt-4 max-w-xl space-y-4 leading-relaxed text-(--color-muted)">
-            {t.ai.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <p className="mt-4 max-w-xl text-lg font-medium text-(--color-accent)">{t.ai.highlight}</p>
         </div>
-      </div>
+      )}
     </Entry>
   );
 }
