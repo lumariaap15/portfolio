@@ -14,20 +14,20 @@ export function Faq({ t }: { t: Messages }) {
   };
 
   return (
-    <Entry id="faq">
+    <Entry id="faq" t={t}>
       <div className="mx-auto max-w-3xl">
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
-        <h2 className="font-bold text-3xl tracking-tight text-(--color-ink) sm:text-4xl">{t.faq.title}</h2>
+        <h2 className="ink-in font-bold text-4xl leading-[1.05] text-(--color-ink) sm:text-5xl">{t.faq.title}</h2>
 
         <div className="mt-10 flex flex-col">
           {t.faq.items.map((item) => (
             <details key={item.q} className="group border-t border-(--color-line) py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-(--color-ink) marker:content-none">
-                <span>{item.q}</span>
+                <span className="headline text-lg font-bold sm:text-xl">{item.q}</span>
                 <ChevronIcon className="shrink-0 text-(--color-faint) transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-3 max-w-xl leading-relaxed text-(--color-muted)">{item.a}</p>

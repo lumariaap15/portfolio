@@ -2,26 +2,7 @@
 
 import type { Messages } from "@/i18n/getMessages";
 import { useEntryContext } from "./EntryTracker";
-import { ENTRIES, type EntryId } from "./entries";
-
-function entryLabel(id: EntryId, t: Messages): string | null {
-  switch (id) {
-    case "hero":
-      return null;
-    case "about":
-      return t.nav.about;
-    case "services":
-      return t.nav.services;
-    case "process":
-      return t.nav.process;
-    case "work":
-      return t.nav.work;
-    case "faq":
-      return t.nav.faq;
-    case "contact":
-      return t.nav.contact;
-  }
-}
+import { ENTRIES, entryLabel, type EntryId } from "./entries";
 
 export function EntryIndex({ t }: { t: Messages }) {
   const { activeIndex } = useEntryContext();

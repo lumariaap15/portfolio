@@ -4,9 +4,9 @@ import { Entry } from "./pipeline/Entry";
 /** Merged philosophy + why-work-with-me into a single "profile" stage. */
 export function Profile({ t }: { t: Messages }) {
   return (
-    <Entry id="about">
+    <Entry id="about" t={t}>
       <div className="mx-auto max-w-3xl">
-        <h2 className="font-bold max-w-2xl text-3xl tracking-tight text-(--color-ink) sm:text-4xl">
+        <h2 className="font-bold max-w-2xl text-4xl leading-[1.05] text-(--color-ink) sm:text-5xl">
           {t.philosophy.title}
         </h2>
         <div className="mt-6 max-w-xl space-y-4 leading-relaxed text-(--color-muted)">

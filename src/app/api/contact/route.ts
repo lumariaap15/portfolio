@@ -8,13 +8,38 @@ type ContactPayload = {
   company?: string;
   project?: string;
   website?: string;
+  turnstileToken?: string;
 };
+
+async function verifyTurnstile(token: string, secret: string, ip: string | null) {
+  const body = new URLSearchParams({ secret, response: token });
+  if (ip) body.set("remoteip", ip);
+
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body,
+  });
+  if (!res.ok) return false;
+  const result = (await res.json()) as { success: boolean };
+  return result.success;
+}
 
 export async function POST(request: Request) {
   const data = (await request.json()) as ContactPayload;
 
   if (!data.name || !data.email || !data.project) {
     return NextResponse.json({ error: "missing required fields" }, { status: 400 });
+  }
+
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (!turnstileSecret) {
+    console.error("TURNSTILE_SECRET_KEY is not set — cannot verify contact form submissions.");
+    return NextResponse.json({ error: "captcha not configured" }, { status: 500 });
+  }
+
+  const ip = request.headers.get("cf-connecting-ip") ?? request.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? null;
+  if (!data.turnstileToken || !(await verifyTurnstile(data.turnstileToken, turnstileSecret, ip))) {
+    return NextResponse.json({ error: "captcha failed" }, { status: 403 });
   }
 
   const apiKey = process.env.RESEND_API_KEY;

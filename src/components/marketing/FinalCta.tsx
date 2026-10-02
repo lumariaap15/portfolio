@@ -7,26 +7,30 @@ import { Footer } from "@/components/Footer";
 
 export function FinalCta({ t, locale }: { t: Messages; locale: Locale }) {
   return (
-    <Entry id="contact" bleed>
-      <div className="px-6 pt-24 sm:px-8">
+    <Entry id="contact" t={t} bleed>
+      <div className="px-6 pt-14 sm:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-bold max-w-xl text-3xl tracking-tight text-(--color-ink) sm:text-4xl"><Typewriter text={t.hero.headline} /></h2>
+          <h2 className="font-bold max-w-xl text-4xl leading-[1.05] text-(--color-ink) sm:text-5xl"><Typewriter text={t.hero.headline} /></h2>
         </div>
       </div>
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/static/teaching.jpg"
-        alt={t.finalCta.photoAlt}
-        width={3024}
-        height={4032}
-        className="mx-auto mt-10 block h-48 w-[85%] object-cover grayscale sm:h-60 sm:w-[65%] lg:h-72"
-        style={{
-          objectPosition: "50% 27%",
-          maskImage: "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%)",
-        }}
-      />
+      <figure className="mx-auto mt-10 max-w-3xl px-6 sm:px-8">
+        <div className="halftone border border-(--color-ink)">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/static/teaching.jpg"
+            alt={t.finalCta.photoAlt}
+            width={3024}
+            height={4032}
+            loading="lazy"
+            className="block h-56 w-full object-cover sm:h-72 lg:h-80"
+            style={{ objectPosition: "50% 27%" }}
+          />
+        </div>
+        <figcaption aria-hidden="true" className="mt-2 text-xs italic text-(--color-muted)">
+          {t.finalCta.photoAlt}.
+        </figcaption>
+      </figure>
 
       <div className="px-6 pb-24 pt-12 sm:px-8 sm:pt-16">
         <div id="contact-form-inputs" className="mx-auto max-w-3xl scroll-mt-24">
@@ -35,12 +39,12 @@ export function FinalCta({ t, locale }: { t: Messages; locale: Locale }) {
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <a
               href={site.bookingUrl}
-              className="inline-flex cursor-pointer items-center justify-center rounded-full bg-(--color-accent) px-6 py-3 text-sm text-(--color-paper) transition-colors hover:bg-(--color-accent-soft)"
+              className="inline-flex cursor-pointer items-center justify-center rounded-[2px] bg-(--color-accent) px-6 py-3 text-sm text-(--color-paper) transition-colors hover:bg-(--color-accent-soft)"
             >
               {t.cta.bookCall}
             </a>
           </div>
-          <ContactForm t={t.contactForm} />
+          <ContactForm t={t.contactForm} locale={locale} />
 
           <Footer locale={locale} t={t} />
         </div>

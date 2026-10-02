@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Courier_Prime, Caveat } from "next/font/google";
+import { Courier_Prime, Caveat, Newsreader, UnifrakturMaguntia } from "next/font/google";
 import { site } from "@/lib/site";
 import { locales, isLocale, getMessages, type Locale } from "@/i18n/getMessages";
 import { EntryTracker } from "@/components/marketing/pipeline/EntryTracker";
@@ -11,7 +11,25 @@ import "../globals.css";
 const typeFont = Courier_Prime({
   subsets: ["latin"],
   weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-courier",
+  display: "swap",
+});
+
+/** Headline face: a text serif drawn for news reading, with display optical sizes. */
+const newsFont = Newsreader({
+  subsets: ["latin"],
+  weight: ["500", "700", "800"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
+
+/** Nameplate only: the masthead's blackletter. */
+const plateFont = UnifrakturMaguntia({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-unifraktur",
   display: "swap",
 });
 
@@ -108,7 +126,7 @@ export default async function LocaleLayout({
   const t = getMessages(locale);
 
   return (
-    <html lang={locale} className={`${typeFont.variable} ${handFont.variable}`}>
+    <html lang={locale} className={`${typeFont.variable} ${handFont.variable} ${newsFont.variable} ${plateFont.variable}`}>
       <body>
         <script
           type="application/ld+json"

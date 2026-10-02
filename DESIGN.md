@@ -1,211 +1,260 @@
 ---
 name: Luisa Alzate — Portfolio
-description: A live build pipeline for a solo software engineer's portfolio — the visitor watches trust get earned stage by stage, the accent shifting color as the run progresses through eight stages, closing the loop back to indigo at dispatch.
+description: A personal typed letter from Luisa to the visitor, printed as a single-edition broadsheet — blackletter nameplate, news-serif headlines, typewriter body copy on warm newsprint.
 colors:
-  paper: "#ffffff"
-  paper-soft: "#f6f5f2"
-  line: "#e4e2dd"
-  ink: "#111111"
-  muted: "#55534e"
-  faint: "#6b6862"
-  accent: "#4f46e5"
-  accent-soft: "#4338ca"
-  accent-bg: "#eef2ff"
+  accent: "#9a3324"
+  accent-soft: "#7a281c"
+  accent-bg: "#f1e2dd"
+  ink: "#221f1a"
+  muted: "#6b6255"
+  faint: "#6b6255"
+  line: "#d5ccb8"
+  paper: "#f3eee2"
+  paper-soft: "#ebe4d3"
 typography:
+  nameplate:
+    fontFamily: "UnifrakturMaguntia, Newsreader, serif"
+    fontSize: "1.875rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0"
   display:
-    fontFamily: "var(--font-display-face), Inter, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 5vw, 3.75rem)"
+    fontFamily: "Newsreader, 'Iowan Old Style', Georgia, serif"
+    fontSize: "4.5rem"
     fontWeight: 800
-    lineHeight: 1.1
-    letterSpacing: "-0.025em"
+    lineHeight: 1.02
+    letterSpacing: "-0.03em"
   headline:
-    fontFamily: "var(--font-display-face), Inter, system-ui, sans-serif"
-    fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
-    fontWeight: 800
-    lineHeight: 1.2
-    letterSpacing: "-0.025em"
+    fontFamily: "Newsreader, 'Iowan Old Style', Georgia, serif"
+    fontSize: "3rem"
+    fontWeight: 700
+    lineHeight: 1.05
+    letterSpacing: "-0.018em"
   title:
-    fontFamily: "var(--font-display-face), Inter, system-ui, sans-serif"
-    fontSize: "clamp(1.25rem, 2vw, 1.875rem)"
-    fontWeight: 800
-    lineHeight: 1.3
+    fontFamily: "Newsreader, 'Iowan Old Style', Georgia, serif"
+    fontSize: "1.5rem"
+    fontWeight: 700
+    lineHeight: 1.33
+    letterSpacing: "-0.018em"
   body:
-    fontFamily: "var(--font-body-face), Inter, system-ui, sans-serif"
+    fontFamily: "'Courier Prime', ui-monospace, SFMono-Regular, monospace"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.625
+  body-lead:
+    fontFamily: "'Courier Prime', ui-monospace, SFMono-Regular, monospace"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.625
   label:
-    fontFamily: "var(--font-geist-mono), ui-monospace, monospace"
+    fontFamily: "'Courier Prime', ui-monospace, SFMono-Regular, monospace"
     fontSize: "0.75rem"
     fontWeight: 400
+    lineHeight: 1.33
     letterSpacing: "0.05em"
+  caption:
+    fontFamily: "'Courier Prime', ui-monospace, SFMono-Regular, monospace"
+    fontSize: "0.75rem"
+    fontWeight: 400
+    lineHeight: 1.375
 rounded:
-  md: "6px"
-  full: "9999px"
-  2xl: "16px"
+  print: "2px"
 spacing:
-  xs: "8px"
-  sm: "16px"
-  md: "24px"
-  lg: "32px"
-  xl: "40px"
-  2xl: "64px"
+  tag-x: "12px"
+  field-x: "12px"
+  button-x: "24px"
+  gutter: "24px"
+  gutter-wide: "32px"
+  item: "32px"
+  section-bottom: "96px"
+  column: "48rem"
+  sheet: "56rem"
+  header-h: "3.5rem"
 components:
   button-primary:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.print}"
     padding: "12px 24px"
-    typography: "{typography.label}"
   button-primary-hover:
     backgroundColor: "{colors.accent-soft}"
-  button-header-cta:
-    backgroundColor: "{colors.accent}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.full}"
-    padding: "8px 16px"
-    typography: "{typography.label}"
-  button-form-submit:
+  button-submit:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.print}"
     padding: "12px 24px"
-    typography: "{typography.label}"
-  button-form-submit-hover:
+  button-submit-hover:
     backgroundColor: "{colors.accent}"
+    textColor: "{colors.paper}"
   input-field:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.print}"
     padding: "8px 12px"
-  avatar-image:
-    rounded: "{rounded.2xl}"
-    width: "160px"
-    height: "160px"
+  tag:
+    textColor: "{colors.muted}"
+    rounded: "{rounded.print}"
+    padding: "4px 12px"
+  masthead:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.nameplate}"
+    height: "{spacing.header-h}"
 ---
 
 # Design System: Luisa Alzate — Portfolio
 
 ## Overview
 
-**Creative North Star: "The Build Pipeline"**
+**Creative North Star: "The Typed Letter, Set as a Broadsheet"**
 
-The homepage is a CI/CD run, not a scrolling brochure: a fixed status header and a numbered left-hand stage rail track the visitor's progress through eight pipeline stages (init → build:services → build:ai → pipeline → deploy → profile → docs → dispatch) as they scroll. The surface is a near-white build log — paper and hairline dividers, Bricolage Grotesque extrabold display headlines, Hanken Grotesk prose, Geist Mono for anything that reads as machine output (status, numbers, labels, nav) — with an accent that shifts hue stage by stage (indigo → violet → fuchsia → rose → amber → emerald → cyan → indigo again at dispatch, closing the loop), cascaded through a CSS custom-property wrapper and cross-fading with a 500ms color transition as the visitor scrolls. The shifting hue reads as mood/momentum; it never breaks status semantics — queued/active/passed is still carried by the drawn marker shape (hollow ring / ring+dot / filled check), never by which color is currently live.
+The page is one personal letter from Luisa to the visitor, typed on a manuscript typewriter and then printed as a single-edition newspaper. The letter supplies the voice: every paragraph, label, caption and control is set in Courier Prime, and there is one ribbon-red ink for the few things that ask to be acted on. The broadsheet supplies the structure, added at the user's request: a blackletter nameplate in the fixed masthead, a dateline band under it, news-serif headlines, a drop cap on each lead paragraph, heavy-over-hairline rules between sections, column rules between side-by-side facts, and grayscale halftone photographs with italic captions.
 
-The system is flat by construction: no shadows, no blur, no glass anywhere in the build. Depth and hierarchy come from hairline borders (`--color-line`), color (ink vs. muted vs. faint), and weight, never from elevation. Selection and state are communicated by font-weight and color shifts alone.
+Everything sits on one continuous sheet of warm newsprint. The paper texture is fixed over the whole viewport and above every layer, so ink, photographs and chrome all read as printed on the same stock rather than as a texture placed behind content. Depth comes from print, never from lift: no shadows, no cards, no floating surfaces.
 
-Revised twice since the original build. First (token-level): the signal-green accent was swapped for electric indigo and Unbounded was added as the display face. Second, at explicit follow-up request: the forced full-viewport section height and mandatory scroll-snap were relaxed; the display/body pairing changed again (Unbounded → Bricolage Grotesque at an explicit extrabold weight, Geist Sans → Hanken Grotesk); the single static accent became an eight-stage animated accent cascade; Philosophy, Why-Me, and the personal bio were merged from three stages into one ("profile"); real monochrome tech-brand marks and a grayscale bio photo were added; and `cursor-pointer` was swept across every custom interactive element (Tailwind v4 no longer defaults buttons to a pointer cursor). Structure, copy voice, and the flat/no-shadow/drawn-icon system were left untouched by both revisions.
+Density is that of a letter, not a front page: one text column (48rem) centered on the sheet, generous vertical rhythm, sections separated by a rule rather than by full-viewport emptiness. The broadsheet devices frame the letter; they never turn it into a multi-column news grid.
 
 **Key Characteristics:**
-- Accent shifts per pipeline stage (indigo → violet → fuchsia → rose → amber → emerald → cyan → indigo), not one fixed site-wide hue; queued/active/passed status is always carried by marker shape, never by the current hue.
-- Bricolage Grotesque, set extrabold (800), for every h1/h2/h3 display headline; Hanken Grotesk for body/paragraph copy; Geist Mono for status pills, stage numbers, metadata/tag labels, and nav only.
-- Fully flat: hairline 1px borders, zero shadows, zero backdrop-blur.
-- Drawn SVG stage markers (hollow ring / ring+dot / filled check) — never unicode glyphs or emoji; the active marker's inner dot carries the `stage-pulse` live-motion signature.
-- List+detail is the signature content pattern across Services, Process, and Selected Work.
+- Warm newsprint ground with a fixed grain, fibre and mottle overlay above all content.
+- Three faces with fixed jobs: blackletter for the nameplate only, news serif for headlines, typewriter for everything read.
+- One accent ink (ribbon red) for calls to action, active states, service headlines and reading progress.
+- Rules, not boxes: a double rule under the masthead, a heavy-over-hairline rule between sections, hairlines between list items and columns.
+- Printed photographs: grayscale, multiplied into the paper, halftone-screened, ink-bordered, captioned in italic.
+- Near-square corners (2px) on every control; no pills.
 
 ## Colors
 
-Near-white build-log neutrals plus a per-stage accent triplet that cascades as the visitor scrolls; no fixed secondary/tertiary hue — the "secondary" role is filled by whichever stage is currently active.
+A three-ink press run on warm stock: near-black ink, one muted ribbon red, and a small family of paper and rule tones.
 
 ### Primary
-- **Electric Indigo** (`#4f46e5`): the default/fallback accent (`@theme` base value) and the stage-1 ("init") and stage-8 ("dispatch") triplet, closing the loop. Used for the "passed"/"active" stage-status color, the primary CTA background, active-state rail/pill icons and text, and links inside detail panels, whichever hue is currently live.
-- **Electric Indigo, Pressed** (`#4338ca`): hover/active companion to the stage-1/8 triplet.
-- **Indigo Wash** (`#eef2ff`): status-pill background wash companion to the stage-1/8 triplet.
-
-### Named Rules
-**The Accent-Per-Stage Rule.** `accent-palette.ts` defines eight `{accent, soft, bg}` triplets (indigo, violet, fuchsia, rose, amber, emerald, cyan, indigo) at ~Tailwind-700 depth (≥4.5:1 on white as text). `StageProvider` writes the active stage's triplet onto `--color-accent`/`--color-accent-soft`/`--color-accent-bg` on an inline-styled wrapper div; every consumer transitions with `transition-colors duration-500` so the hue drifts rather than snaps between stages.
-**The Shape-Carries-Status Rule.** The stage marker's drawn shape (hollow ring = queued, ring+dot = active, filled check = passed) is the only carrier of pipeline status. The cascading accent hue is mood/momentum only and must never be read as a status signal.
-**The One Signal Rule.** Whichever hue is currently live is reserved for "passed," "active," and the dispatch action within that stage. It never decorates a card, a divider, or a heading; if nothing has completed or isn't actionable, the element stays ink/muted/faint.
+- **Ribbon Red** (accent): the typewriter-ribbon red. The booking button, the header contact link, the active language, the reading-progress line, form focus borders, the focus ring, text selection, and the large service headlines. It carries action and one class of headline; it never fills a surface larger than a button.
+- **Pressed Ribbon** (accent-soft): the hover and pressed state of anything in Ribbon Red.
+- **Ribbon Wash** (accent-bg): a pale red wash defined in the palette but not used by any shipped surface; reserve it for a tinted state before inventing a new tint.
 
 ### Neutral
-- **Paper** (`#ffffff`): base page background.
-- **Paper Soft** (`#f6f5f2`): reserved for subtly elevated surfaces (defined in tokens; not yet drawn on by any shipped component).
-- **Hairline** (`#e4e2dd`): all borders and dividers — header/rail bottom-border, stage-list row dividers, chip/tag borders, footer rule.
-- **Ink** (`#111111`): primary text, headings, active list-row selection color, the form-submit button background.
-- **Muted** (`#55534e`): secondary/body copy color throughout.
-- **Faint** (`#6b6862`): tertiary/metadata color — stage numbers, timestamps, footer copyright line, queued-stage icons/text. Confirmed ≥4.5:1 on white.
+- **Press Ink** (ink): headlines, the nameplate, body emphasis, photo frames, the masthead and section rules, the drop cap, and the dark submit button.
+- **Faded Ink** (muted / faint): secondary text, running body copy in sections, captions, labels, the dateline, inactive index entries. `faint` is an alias of `muted` by design: there is exactly one secondary text voice.
+- **Column Rule** (line): hairlines between list items, column rules, tag and field outlines, underline decoration on quiet links, the scrollbar thumb.
+- **Newsprint** (paper): the sheet, the masthead background, field backgrounds, text on accent and ink buttons.
+- **Soft Newsprint** (paper-soft): the backing tone inside the portrait frame, where the cut-out photograph leaves paper showing.
+
+### Named Rules
+**The One Ribbon Rule.** Ribbon Red is the only chromatic ink. Tech logos, photographs, icons and texture are all ink or grayscale; nothing else on the sheet carries hue.
+
+**The One Secondary Voice Rule.** Secondary text has one color. Do not introduce a third, lighter text gray; `faint` exists only as a name for `muted`.
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque, extrabold (800) (self-hosted via `next/font/google`, weights loaded `["600","800"]`, CSS var `--font-display-face`; with Inter, system-ui fallback)
-**Body Font:** Hanken Grotesk (self-hosted via `next/font/google`, weights loaded `["400","500","600"]`, CSS var `--font-body-face`; with Inter, system-ui fallback)
-**Label/Mono Font:** Geist Mono (with ui-monospace fallback)
+**Nameplate Font:** UnifrakturMaguntia (with Newsreader, serif)
+**Headline Font:** Newsreader (with Iowan Old Style, Georgia, serif), optical sizing on
+**Body Font:** Courier Prime (with ui-monospace, SFMono-Regular, monospace), weights 400 and 700
 
-**Character:** A heavy-geometric-display-over-humanist-workhorse pairing — Bricolage Grotesque carries every h1/h2/h3 headline at an explicit `font-extrabold` weight for a genuinely distinctive, unmistakably-not-generic-SaaS voice; Hanken Grotesk carries paragraph prose in a plain, legible register; Geist Mono marks anything that reads as generated machine output: status pills, stage numbers, tag/category/metadata labels, and footer/nav links. Geist Mono is no longer used for button/CTA copy in the current build (buttons render in the mono label size/tracking but the family comes through the shared `--font-mono` stack applied at the label-size level, not a headline override).
+**Character:** A broadsheet's apparatus around a typed letter. The blackletter and serif announce the paper; the typewriter is Luisa speaking. The contrast between a drawn news serif and a monospaced typed face is the whole identity.
 
 ### Hierarchy
-- **Display** (Bricolage Grotesque, 800, `text-4xl sm:text-5xl md:text-6xl`, `leading-[1.1]`, `tracking-tight`): the hero `<h1>` only.
-- **Headline** (Bricolage Grotesque, 800, `text-2xl sm:text-3xl` up to `text-3xl sm:text-4xl`): the per-stage section heading (Services, AI Capability, Process, Selected Work, Profile, FAQ, Final CTA).
-- **Title** (Bricolage Grotesque, 800, `text-xl sm:text-2xl` or `text-2xl sm:text-3xl`): sub-headings inside a stage (service/process/project item titles, the merged Profile stage's three sub-sections).
-- **Body** (Hanken Grotesk, 400, base size, `leading-relaxed`, `text-(--color-muted)`): paragraph copy; kept to a `max-w-xl`/`max-w-2xl` measure.
-- **Label** (Geist Mono, 400, `text-xs`/`text-[11px]`/`text-[10px]`, `tracking-wider`, sometimes uppercase): status pills, stage numbers, field labels, tag lists, category labels, footer/nav copy.
+- **Nameplate** (400, 1.5rem rising to 1.875rem, line-height 1): Luisa's name in the fixed masthead. Nowhere else.
+- **Display** (800, 3rem / 3.75rem / 4.5rem across breakpoints, line-height 1.02, tracking -0.03em): the hero headline only, which types itself on arrival.
+- **Headline** (700, 2.25rem rising to 3rem, line-height 1.05, tracking -0.018em, balanced wrap): section headings. Service headlines use the same face larger (2.25rem to 3.75rem, line-height 1.02) in Ribbon Red.
+- **Title** (700, 1.25rem rising to 1.5rem): process steps, case-study titles, FAQ questions (1.125rem to 1.25rem), the contact heading (1.875rem to 2.25rem).
+- **Body** (400, 1rem, line-height 1.625, max about 36rem): all running copy, in Faded Ink. The hero lead runs at 1.125rem.
+- **Label** (400, 0.75rem, tracking 0.05em, uppercase): form labels and case-study fact labels (Problem / Approach / Outcome at 11px). The dateline band uses the same treatment at 11px to 12px with wider tracking (0.14em).
+- **Caption** (400 italic, 0.75rem): under every photograph, in Faded Ink.
+- **Drop Cap** (Newsreader 800, 3.6em, line-height 0.82, Press Ink): the first letter of a lead paragraph, floated three lines deep.
 
 ### Named Rules
-**The Mono-Is-Machine-Output Rule.** Mono type marks anything that reads as system-generated: counters, statuses, tags, labels, and nav. Body copy stays Hanken Grotesk.
-**The Display-Is-Headline Rule.** Bricolage Grotesque, always at `font-extrabold`, is reserved for h1/h2/h3 structural headings only, applied via the shared `--font-display` token (`[font-family:var(--font-display)]` + `font-extrabold`); it never appears in body prose or labels.
+**The Typed Body Rule.** Anything meant to be read as prose, labels, captions, buttons, navigation or form copy is Courier Prime. Newsreader is for headlines and drop caps only; it never sets a paragraph.
+
+**The One Nameplate Rule.** Blackletter appears once: the masthead name. Never set a heading, number or ornament in it.
 
 ## Layout
 
-Single-column content column (`max-w-3xl` for prose stages; `max-w-4xl` for list+detail stages), centered with `mx-auto px-4 sm:px-6`. A fixed `4rem`-tall header (`--header-h`) spans the full width; a fixed `3.5rem`-wide left stage rail (`--rail-w`) runs the remaining viewport height on desktop (`md:` and up), collapsing to a fixed bottom stage strip on mobile.
+A single centered text column on a full-width sheet. Section content sits at 48rem wide; the hero, dateline and masthead widen to 56rem so the portrait and headline can sit side by side (a 240px portrait column plus the headline column from the md breakpoint up, stacked below it). Side gutters are 24px, 32px from the sm breakpoint.
 
-Each of the eight sections (`Stage.tsx`) is a natural-content-height `<section>` — no forced `min-h`/`dvh` — padded `pt-[calc(header+3rem)] pb-24` and, on desktop, `pl-[calc(rail+1.5rem)]` to clear the fixed chrome. Scroll-snap is `scroll-snap-type: y proximity` (relaxed from an earlier `mandatory`), since section heights now vary considerably by content; sections still declare `scroll-snap-align: start` so they remain discrete, navigable beats without forcing every section to fill the viewport or stranding short content mid-scroll.
+Each section clears the fixed masthead: top padding is the header height plus 4rem, bottom padding 96px. Short sections (the hero) hold a full viewport and center their content; long sections take their natural height. Items inside a section (services, steps, case studies, FAQ entries) stack at 32px vertical padding separated by a Column Rule hairline; the first item carries no rule.
 
-Spacing rhythm is generous and consistent: `mt-6`–`mt-10` (24–40px) between a heading and its following block, `space-y-4` (16px) between paragraphs, `gap-8`/`gap-10` (32–40px) for two-column grids (Profile headshot+bio, list+detail columns), and a `mt-16` (64px) top rule before internal stage sub-sections and the footer.
+Case-study facts sit in three columns from the sm breakpoint, divided by vertical column rules (24px left padding); below sm they stack with horizontal rules.
+
+Services, with motion allowed and a viewport at least 600px tall, become a pinned reel: a sticky frame below the masthead, about four viewports of scroll, and the three services crossfading in place. The panel scales down to fit short viewports; if it would need to shrink below 82%, or motion is reduced, the section falls back to the ordinary stacked list.
+
+Persistent chrome is two pieces: the fixed masthead (location left, nameplate center, contact link and language toggle right) and a quiet section index fixed bottom-left (the full list from sm up, only the current section's name below sm).
 
 ## Elevation & Depth
 
-Fully flat. No `box-shadow`, no `backdrop-filter`/blur, no glass anywhere in the shipped build — this includes the fixed header and stage rail, which are solid, fully opaque `--color-paper` panes with a single 1px `--color-line` border, not translucent chrome. Depth and separation are conveyed entirely by hairline borders and by ink/muted/faint color steps, never by shadow or layering. Unchanged by this revision.
+Flat, printed, no shadows anywhere. Depth is expressed as ink on paper: rules of different weights, ink borders around photographs, and the newsprint overlay that sits above everything. The overlay is two fixed, non-interactive layers at the top of the stack: one of fine grain, pulp specks and long horizontal fibres (55% opacity), one of broad uneven mottling with a warm edge tone toward the viewport corners (50% opacity). The masthead is separated from the sheet by a 3px ink rule band, not by a shadow; reading progress draws across it in Ribbon Red.
 
 ### Named Rules
-**The No-Shadow Rule.** Nothing in this system casts a shadow or sits behind blur. A divider is a 1px hairline; a raised surface does not exist as a device.
+**The Same Stock Rule.** The paper texture sits above content, not behind it. Any new surface, photo or control is printed on the same sheet; never lift one above the texture or give it its own background image.
+
+**The No Lift Rule.** No box-shadows, no elevated cards, no blur. If something needs separation, rule it.
 
 ## Shapes
 
-Two radius steps plus one exception. Interactive pill controls (primary CTA, header CTA, form submit, process tag chips, rail stage markers' hit area) use a fully rounded `rounded-full` (9999px) capsule. Form inputs/textarea use a modest `rounded-md` (6px). The Profile-section headshot uses `rounded-2xl` (16px) — a soft-cornered rectangle, not a circular or geometric occlusion mask — and now renders `grayscale`. Borders are exclusively 1px hairlines in `--color-line`; there are no thick borders, no side-stripe accent borders, and no hard-offset "sticker" shadows anywhere in the build.
+Corners are print-square: 2px on buttons, fields and tags, and on the focus ring. Nothing is a pill. Containers are not boxes: sections, list items and columns are defined by rules, not by borders on all four sides. The only fully bordered objects are photographs, each in a 1px Press Ink frame.
+
+The section break is the signature form: every section after the first opens with a folio line (page number A2–A6, section name in bold, edition) over a 3px ink rule above a 1px ink rule, set to the text column's width (48rem or the viewport less 3rem). The footer opens with a 4px double ink rule. The portrait is a cut-out PNG in a 4:5 ink-bordered frame on Soft Newsprint, with the halftone screen masked to the figure's silhouette so the paper around it stays clean.
 
 ## Components
 
 ### Buttons
-- **Shape:** fully rounded capsule (`rounded-full`).
-- **Primary (dispatch CTA):** `bg-(--color-accent)` / `text-paper`, mono label, `px-6 py-3` in-page or `px-3.5–4 py-2` in the header; hover shifts to `bg-(--color-accent-soft)`; both transition with `transition-colors duration-500` to track the cascading per-stage hue. Every interactive control (`<button>`, `<a>` styled as a button) carries explicit `cursor-pointer`.
-- **Form submit:** inverted — `bg-ink` / `text-paper` at rest, hovers to `bg-(--color-accent)`; `disabled:opacity-60 disabled:cursor-not-allowed` while sending.
-- **Secondary/text link:** mono, `text-muted`, underline with `decoration-line`, hover to `text-ink` or `text-(--color-accent-soft)`.
+Plain printed blocks: a solid ink rectangle with typed text.
+- **Shape:** print-square (2px).
+- **Primary (booking):** Ribbon Red fill, Newsprint text, 12px by 24px, 0.875rem Courier. Used for "book a call" in the hero and the closing section.
+- **Submit:** Press Ink fill, Newsprint text, same size; hovers to Ribbon Red. Disabled at 60% opacity.
+- **Hover / Focus:** color transition only; focus shows the 2px Ribbon Red ring at a 3px offset.
 
-### Cards / Containers
-This system does not use a card container as a structural device anywhere. Content sits directly on the paper background inside its stage section; the only recurring "container" boundary is a 1px top hairline rule between stacked rows (list+detail rows, Profile benefit blocks and sub-sections, FAQ items, footer).
+### Links
+- **Quiet link:** Faded Ink text with a Column Rule underline at a 4px offset, darkening to Press Ink on hover; at least 44px tall. Used for LinkedIn, GitHub and CV.
+- **Accent link:** Ribbon Red text, underlined, darkening to Pressed Ribbon. Used for the header contact link and the in-step booking link.
+
+### Tags
+- **Style:** Column Rule outline, 2px corners, 4px by 12px, 0.875rem Faded Ink text, no fill. Process-step deliverables.
+- **Service tags:** not boxed; bold Press Ink text with a thick 35% Ribbon Red underline, set in a two-column list.
 
 ### Inputs / Fields
-- **Style:** `rounded-md`, 1px `--color-line` border, `bg-paper`/`text-ink`, mono uppercase-tracking-wider label above the field.
-- **Focus:** border color shifts to `--color-accent` (no glow, no ring shadow).
-- **Error / Disabled:** error copy renders in `--color-accent` text below the form; the submit button dims to 60% opacity and shows `cursor-not-allowed` while disabled/sending.
+- **Style:** Newsprint background, 1px Column Rule border, 2px corners, 8px by 12px, Press Ink text; uppercase Label above each field.
+- **Focus:** border turns Ribbon Red, with the global focus ring.
+- **Error:** a single line of Ribbon Red text under the form.
 
 ### Navigation
-- **Header:** fixed, fully opaque, 1px bottom hairline; site name (display face) left, status pill (mono, center-right, hidden below `sm`), language toggle (mono `EN`/`ES`, active = `text-(--color-accent)`, both states `cursor-pointer`), and the accent CTA pill, right.
-- **Stage rail:** fixed left column on desktop (bottom strip on mobile); each stage is a drawn SVG marker (hollow ring = queued/faint, ring+dot = active/accent, filled check = passed/accent) plus a mono two-digit `tabular-nums` index; each stage hit-target carries `cursor-pointer`. Hover shifts queued/passed color toward `--color-accent-soft`. The active marker's inner dot has a `stage-pulse` class — a slow breathing opacity/scale keyframe (1.8s, ease-in-out, infinite) — the system's one signature live-motion detail, disabled under `prefers-reduced-motion`.
+- **Masthead:** fixed, 3.5rem tall, Newsprint background, three-column grid (location, nameplate, contact link plus language toggle). Its bottom edge is an ink rule band with the reading-progress line drawn over it.
+- **Language toggle:** "EN / ES" in 0.75rem; the current locale in Ribbon Red, others in Faded Ink darkening on hover.
+- **Section index:** 0.875rem, bottom-left; the current entry bold Press Ink, others Faded Ink. Below sm it collapses to a single labelled chip on Newsprint with a Column Rule border.
 
-### List + Detail (signature component)
-The recurring content pattern for Services, Process, and Selected Work: a left-hand vertical tab list (hairline-divided rows, mono metadata line + sans label, each row a `<button>` with `cursor-pointer`) beside a right-hand detail panel that cross-fades/slides in on selection (`opacity`/`y:8px`, 0.22s, custom ease, respecting `prefers-reduced-motion`). **The selection cue is font-weight and color only** — the active row goes `font-medium text-ink`; inactive rows stay `text-muted`. There is no side-stripe border, background fill, or icon on the selected row.
+### Dateline Band
+A full-width strip ruled in ink above and below, holding location, tagline and edition in uppercase 11px to 12px labels, justified apart. Sits directly under the masthead at the top of the hero.
 
-### Tech Brand Marks
-`TechLogo.tsx` renders a monochrome (`fill="currentColor"`, ink-colored) inline SVG brand mark from the `simple-icons` package next to a Selected Work stack tag, but only for the eight technologies with a real catalog entry shipped (Node.js, TypeScript, React, PostgreSQL, Sentry, Jest, GitHub Actions, i18next). Every other stack tag stays plain text — no fabricated or approximated mark is drawn for tools outside that set.
+### Printed Photograph
+Grayscale at contrast 1.12, multiplied into the paper, with a 3.5px halftone dot screen multiplied over it; 1px Press Ink frame; italic Caption below. The portrait masks the screen to its cut-out; the teaching photograph is a full-bleed crop within the column (224px to 320px tall).
+
+### Typewriter Headline
+The one signature motion: a headline types itself at 75ms per character when it scrolls into view, with a solid block caret that blinks once typing completes. It runs on the hero headline, each service headline, and the closing heading. Inside the services reel the service headlines are scrubbed by scroll instead of timed: scrolling forward types them, scrolling back erases them. The text's final width is reserved invisibly so nothing reflows, a screen-reader copy carries the full text, and under reduced motion the full headline renders immediately with no caret.
+
+### Services Reel
+A pinned scroll sequence of three services. Each panel crossfades in and settles 14px upward as it arrives, its headline types with the scroll, then its tools stamp in one by one (opacity, a 1.18 to 1 scale and a 3px blur settling to sharp). A row of service numbers at the bottom-right marks the current one in bold. Disabled under reduced motion and on viewports too short to fit a panel.
+
+### Sheet Stack
+Each section is a sheet of the paper with its own Newsprint ground and a 1px ink edge. As you read, a section pins once its bottom reaches the viewport, and the next sheet slides up over it; the covered page shrinks by up to 5% and darkens under a 30% ink wash, then hides once fully covered. The folio rule draws across with the incoming sheet's travel, the folio text fades in after it, and the section headline (plus its intro line) inks in once the sheet is a third of the way up: opacity, a 5px blur and 12px of travel settling over 700–900ms. Section anchors are zero-height markers so links land correctly. The contact sheet is the last page and never pins. Under reduced motion, sheets stay in normal flow and nothing animates.
+
+### Tools Line
+Under each service body, a Column Rule hairline and an uppercase Label ("Tools") followed by the real tech logos for that service, each a 20px ink mark (simple-icons) beside its name in 0.875rem Press Ink. Shown in both the reel and the stacked list.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** cascade `--color-accent`/`--color-accent-soft`/`--color-accent-bg` per pipeline stage via `accent-palette.ts` + `StageProvider`, transitioning consumers with `transition-colors duration-500`; reserve whichever hue is currently live for that stage's passed/active state and CTA — never as a background wash or decorative border.
-- **Do** carry pipeline status (queued/active/passed) exclusively through the drawn marker shape (hollow ring / ring+dot / filled check); the cascading accent hue is mood only.
-- **Do** set status/label/number/nav copy in Geist Mono; keep headlines in Bricolage Grotesque at `font-extrabold` and body prose in Hanken Grotesk.
-- **Do** mark list/tab selection with `font-medium` + `text-ink` color change only — no stripe, no fill, no icon.
-- **Do** draw stage and status markers as stroked SVG (ring/ring+dot/filled-check); never substitute a unicode glyph or emoji.
-- **Do** keep the header and stage rail fully opaque with a 1px hairline border — no backdrop-blur or translucency.
-- **Do** set explicit `cursor-pointer` on every custom-styled interactive control (buttons, button-like anchors, toggles); Tailwind v4 does not default this.
-- **Do** attach a real brand mark (via `TechLogo.tsx`/`simple-icons`) only when the catalog has a genuine entry for that technology; leave everything else as plain text.
-- **Do** reserve the `stage-pulse` live-pulse animation for the single active-stage marker dot; it is not a general-purpose attention effect.
+- **Do** set every paragraph, label, caption, button and control in Courier Prime, and every headline in Newsreader.
+- **Do** separate sections with the heavy-over-hairline ink rule at column width, and items with a single Column Rule hairline.
+- **Do** print every photograph through the halftone treatment, in a 1px ink frame, with an italic caption.
+- **Do** keep Ribbon Red for action, active state, focus, selection, progress and service headlines.
+- **Do** keep corners at 2px on anything interactive.
+- **Do** keep the newsprint overlay fixed above all content and non-interactive.
+- **Do** honor reduced motion: typed headlines render complete, the services reel falls back to the stacked list, smooth scrolling turns off.
 
 ### Don't:
-- **Don't** introduce a box-shadow, glow, or backdrop-blur anywhere; the system's depth model is flat-plus-hairline, full stop.
-- **Don't** add a colored side-stripe border to a list row, card, or callout to indicate selection or category — weight/color is the only cue this system uses.
-- **Don't** mask the Profile-stage headshot (or any future portrait) into a circle or other geometric cutout; the shipped shape is `rounded-2xl`, and it renders `grayscale`.
-- **Don't** let the cascading accent hue double as a status signal; status is shape-only (see the Shape-Carries-Status Rule).
-- **Don't** use Bricolage Grotesque for body copy or labels; it is a headline-only display face, and always at `font-extrabold` when used.
-- **Don't** fabricate a brand mark for a technology `simple-icons` doesn't carry; plain text is the correct fallback, not an invented glyph.
+- **Don't** add shadows, elevated cards, glass or blur; depth is ink and rules.
+- **Don't** use pill shapes or large radii on buttons, fields or tags.
+- **Don't** set blackletter anywhere except the masthead nameplate.
+- **Don't** set body copy in Newsreader, or headlines in Courier.
+- **Don't** introduce a second chromatic color, or tint logos and icons; they print in ink.
+- **Don't** split the page into a multi-column news grid; the letter keeps one text column, with columns only for short side-by-side facts.
+- **Don't** add new typing animations beyond the three shipped headline placements.

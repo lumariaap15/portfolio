@@ -13,6 +13,5 @@ export const site = {
 		linkedin: "https://www.linkedin.com/in/luisa-mar%C3%ADa-alzate-89a88a17a/", // ← completá
 		cv: "/Luisa_Alzate_CV_2026.pdf",
 	},
-	// TODO: reemplazar por tu link real de Cal.com / Calendly cuando lo tengas.
-	bookingUrl: "https://cal.com/luisa-alzate/intro-call", // ← TODO-booking-link
+	bookingUrl: "https://calendly.com/luisaalzate/tell-me-your-idea",
 };

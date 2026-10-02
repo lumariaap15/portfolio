@@ -6,8 +6,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ ! -f '/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable' ] || '/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable' hook",
-            "commandWindows": "if exist \"/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
+            "command": "[ ! -f '/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable' ] || '/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable' hook",
+            "commandWindows": "if exist \"/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
             "timeout": 5,
             "statusMessage": "Checking UI changes"
           }
@@ -19,8 +19,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ ! -f '/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable' ] || '/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable' hook",
-            "commandWindows": "if exist \"/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/home/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
+            "command": "[ ! -f '/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable' ] || '/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable' hook",
+            "commandWindows": "if exist \"/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" (\"/Users/luisaalzate/.agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
             "timeout": 30,
             "statusMessage": "Design deep pass"
           }

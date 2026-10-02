@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import type { Messages } from "@/i18n/getMessages";
+import { useRef, useState } from "react";
+import type { Locale, Messages } from "@/i18n/getMessages";
+import { Turnstile, type TurnstileHandle } from "./Turnstile";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-export function ContactForm({ t }: { t: Messages["contactForm"] }) {
+export function ContactForm({ t, locale }: { t: Messages["contactForm"]; locale: Locale }) {
   const [status, setStatus] = useState<Status>("idle");
+  const [token, setToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileHandle>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -18,13 +23,14 @@ export function ContactForm({ t }: { t: Messages["contactForm"] }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, turnstileToken: token }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
       form.reset();
     } catch {
       setStatus("error");
+      turnstileRef.current?.reset();
     }
   }
 
@@ -47,15 +53,17 @@ export function ContactForm({ t }: { t: Messages["contactForm"] }) {
           required
           rows={6}
           placeholder={t.projectPlaceholder}
-          className="placeholder:text-(--color-muted) rounded-md border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
+          className="placeholder:text-(--color-muted) rounded-[2px] border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
         />
       </div>
       <Field label={t.website} name="website" />
 
+      <Turnstile ref={turnstileRef} siteKey={TURNSTILE_SITE_KEY} language={locale} onToken={setToken} />
+
       <button
         type="submit"
-        disabled={status === "sending"}
-        className="mt-2 inline-flex w-fit cursor-pointer items-center justify-center rounded-full bg-(--color-ink) px-6 py-3 text-sm text-(--color-paper) transition-colors hover:bg-(--color-accent) disabled:cursor-not-allowed disabled:opacity-60"
+        disabled={status === "sending" || !token}
+        className="mt-2 inline-flex w-fit cursor-pointer items-center justify-center rounded-[2px] bg-(--color-ink) px-6 py-3 text-sm text-(--color-paper) transition-colors hover:bg-(--color-accent) disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending" ? t.sending : t.submit}
       </button>
@@ -85,7 +93,7 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="rounded-md border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
+        className="rounded-[2px] border border-(--color-line) bg-(--color-paper) px-3 py-2 text-(--color-ink) outline-none focus:border-(--color-accent)"
       />
     </div>
   );
