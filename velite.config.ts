@@ -28,7 +28,7 @@ const experience = defineCollection({
     })),
 });
 
-// ── Proyectos (pocos por ahora, crecerá) ─────────────────────────────
+// ── Selected Work / case studies (uno por servicio) ──────────────────
 const projects = defineCollection({
   name: "Project",
   pattern: "projects/**/*.mdx",
@@ -36,8 +36,11 @@ const projects = defineCollection({
     .object({
       title: s.string(),
       description: s.string(),
+      category: s.enum(["custom", "integration", "modernization"]),
+      problem: s.string(),
+      approach: s.string(),
+      outcome: s.string(),
       stack: s.array(s.string()).default([]),
-      status: s.enum(["en-progreso", "completado", "concepto"]).default("en-progreso"),
       featured: s.boolean().default(false),
       repo: s.string().url().optional(),
       demo: s.string().url().optional(),

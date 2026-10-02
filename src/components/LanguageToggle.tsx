@@ -1,25 +1,31 @@
 "use client";
 
-import { useLocale } from "@/i18n/LocaleProvider";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { locales, type Locale } from "@/i18n/getMessages";
 
-export function LanguageToggle() {
-  const { locale, setLocale } = useLocale();
+export function LanguageToggle({ locale }: { locale: Locale }) {
+  const pathname = usePathname();
+  const rest = pathname.split("/").slice(2).join("/");
+
   return (
-    <div className="inline-flex items-center gap-1 font-mono text-xs">
-      {(["en", "es"] as const).map((l) => (
-        <button
-          key={l}
-          onClick={() => setLocale(l)}
-          aria-pressed={locale === l}
-          className={
-            locale === l
-              ? "text-(--color-accent)"
-              : "text-(--color-faint) transition-colors hover:text-(--color-paper)"
-          }
-        >
-          {l.toUpperCase()}
-        </button>
-      )).reduce((acc, el, i) => (i === 0 ? [el] : [...acc, <span key={`sep${i}`} className="text-(--color-faint)">/</span>, el]), [] as React.ReactNode[])}
+    <div className="inline-flex items-center gap-1 text-xs">
+      {locales.map((l, i) => (
+        <span key={l} className="inline-flex items-center gap-1">
+          {i > 0 && <span className="text-(--color-faint)">/</span>}
+          <Link
+            href={`/${l}${rest ? `/${rest}` : ""}`}
+            aria-current={locale === l ? "true" : undefined}
+            className={
+              locale === l
+                ? "cursor-pointer text-(--color-accent) transition-colors"
+                : "cursor-pointer text-(--color-faint) transition-colors hover:text-(--color-ink)"
+            }
+          >
+            {l.toUpperCase()}
+          </Link>
+        </span>
+      ))}
     </div>
   );
 }

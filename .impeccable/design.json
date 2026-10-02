@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T19:38:48.268Z",
+  "title": "Design System: Luisa Alzate — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Ribbon Red",
+        "canonical": "oklch(47.0% 0.140 31.1)",
+        "tonalRamp": [
+          "oklch(15% 0.140 31.1)",
+          "oklch(25% 0.140 31.1)",
+          "oklch(35% 0.140 31.1)",
+          "oklch(45% 0.140 31.1)",
+          "oklch(55% 0.140 31.1)",
+          "oklch(70% 0.140 31.1)",
+          "oklch(85% 0.140 31.1)",
+          "oklch(95% 0.140 31.1)"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Pressed Ribbon",
+        "canonical": "oklch(39.9% 0.117 31.0)",
+        "tonalRamp": [
+          "oklch(15% 0.117 31.0)",
+          "oklch(25% 0.117 31.0)",
+          "oklch(35% 0.117 31.0)",
+          "oklch(45% 0.117 31.0)",
+          "oklch(55% 0.117 31.0)",
+          "oklch(70% 0.117 31.0)",
+          "oklch(85% 0.117 31.0)",
+          "oklch(95% 0.117 31.0)"
+        ]
+      },
+      "accent-bg": {
+        "role": "primary",
+        "displayName": "Ribbon Wash",
+        "canonical": "oklch(92.3% 0.018 39.4)",
+        "tonalRamp": [
+          "oklch(15% 0.018 39.4)",
+          "oklch(25% 0.018 39.4)",
+          "oklch(35% 0.018 39.4)",
+          "oklch(45% 0.018 39.4)",
+          "oklch(55% 0.018 39.4)",
+          "oklch(70% 0.018 39.4)",
+          "oklch(85% 0.018 39.4)",
+          "oklch(95% 0.018 39.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Press Ink",
+        "canonical": "oklch(24.1% 0.010 80.6)",
+        "tonalRamp": [
+          "oklch(15% 0.010 80.6)",
+          "oklch(25% 0.010 80.6)",
+          "oklch(35% 0.010 80.6)",
+          "oklch(45% 0.010 80.6)",
+          "oklch(55% 0.010 80.6)",
+          "oklch(70% 0.010 80.6)",
+          "oklch(85% 0.010 80.6)",
+          "oklch(95% 0.010 80.6)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(50.1% 0.023 77.1)",
+        "tonalRamp": [
+          "oklch(15% 0.023 77.1)",
+          "oklch(25% 0.023 77.1)",
+          "oklch(35% 0.023 77.1)",
+          "oklch(45% 0.023 77.1)",
+          "oklch(55% 0.023 77.1)",
+          "oklch(70% 0.023 77.1)",
+          "oklch(85% 0.023 77.1)",
+          "oklch(95% 0.023 77.1)"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Faded Ink (alias of muted)",
+        "canonical": "oklch(50.1% 0.023 77.1)",
+        "tonalRamp": [
+          "oklch(15% 0.023 77.1)",
+          "oklch(25% 0.023 77.1)",
+          "oklch(35% 0.023 77.1)",
+          "oklch(45% 0.023 77.1)",
+          "oklch(55% 0.023 77.1)",
+          "oklch(70% 0.023 77.1)",
+          "oklch(85% 0.023 77.1)",
+          "oklch(95% 0.023 77.1)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Column Rule",
+        "canonical": "oklch(84.7% 0.029 86.7)",
+        "tonalRamp": [
+          "oklch(15% 0.029 86.7)",
+          "oklch(25% 0.029 86.7)",
+          "oklch(35% 0.029 86.7)",
+          "oklch(45% 0.029 86.7)",
+          "oklch(55% 0.029 86.7)",
+          "oklch(70% 0.029 86.7)",
+          "oklch(85% 0.029 86.7)",
+          "oklch(95% 0.029 86.7)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "canonical": "oklch(95.0% 0.017 88.0)",
+        "tonalRamp": [
+          "oklch(15% 0.017 88.0)",
+          "oklch(25% 0.017 88.0)",
+          "oklch(35% 0.017 88.0)",
+          "oklch(45% 0.017 88.0)",
+          "oklch(55% 0.017 88.0)",
+          "oklch(70% 0.017 88.0)",
+          "oklch(85% 0.017 88.0)",
+          "oklch(95% 0.017 88.0)"
+        ]
+      },
+      "paper-soft": {
+        "role": "neutral",
+        "displayName": "Soft Newsprint",
+        "canonical": "oklch(92.0% 0.024 88.2)",
+        "tonalRamp": [
+          "oklch(15% 0.024 88.2)",
+          "oklch(25% 0.024 88.2)",
+          "oklch(35% 0.024 88.2)",
+          "oklch(45% 0.024 88.2)",
+          "oklch(55% 0.024 88.2)",
+          "oklch(70% 0.024 88.2)",
+          "oklch(85% 0.024 88.2)",
+          "oklch(95% 0.024 88.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "nameplate": {
+        "displayName": "Nameplate",
+        "purpose": "Blackletter masthead name only; 1.5rem to 1.875rem."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; 3rem / 3.75rem / 4.5rem; types itself on arrival."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, 2.25rem to 3rem; service headlines larger in Ribbon Red."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Process steps, case-study titles, FAQ questions, contact heading."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running copy in Courier Prime, Faded Ink, about 36rem measure."
+      },
+      "body-lead": {
+        "displayName": "Lead",
+        "purpose": "Hero lead paragraph, opens with a drop cap."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase form and fact labels; dateline band at wider 0.14em tracking."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Italic line under every photograph."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "typewriter-char",
+        "value": "75ms per character, steps",
+        "purpose": "Headline typing on arrival (hero, service headlines, closing heading)."
+      },
+      {
+        "name": "caret-blink",
+        "value": "1s steps(1) infinite",
+        "purpose": "Block caret after typing completes."
+      },
+      {
+        "name": "reel-crossfade",
+        "value": "scroll-linked opacity, stops 0 / .28 / .38 / .62 / .72 / 1, 14px settle",
+        "purpose": "Pinned services reel panel and watermark crossfade."
+      },
+      {
+        "name": "color-transition",
+        "value": "Tailwind transition-colors default (150ms)",
+        "purpose": "Hover on links and buttons."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition 0.01ms, scroll-behavior auto",
+        "purpose": "Global reduced-motion override."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "reel",
+        "value": "min-width 768px and min-height 900px"
+      }
+    ],
+    "texture": {
+      "overlays": "body::before and body::after, position fixed, inset 0, z-index 60, pointer-events none",
+      "grain": "SVG feTurbulence fractalNoise baseFrequency .9 (220px tile) plus fibres baseFrequency .012 .55 (480px tile), opacity .55",
+      "mottle": "SVG feTurbulence baseFrequency .0035 (900px tile) plus radial edge tone rgb(120 92 48 / .13), opacity .5"
+    },
+    "halftone": {
+      "image": "grayscale(1) contrast(1.12) brightness(1.02), mix-blend multiply",
+      "screen": "radial-gradient dots rgb(34 31 26 / .34) 0.9px, 3.5px grid, multiply, masked by --halftone-mask"
+    },
+    "focus": {
+      "outline": "2px solid var(--color-accent)",
+      "offset": "3px",
+      "radius": "2px"
+    },
+    "rules": {
+      "section": "3px solid ink over 1px solid ink, 6px band, width min(48rem, 100% - 3rem)",
+      "footer": "4px double ink",
+      "item": "1px solid line",
+      "column": "1px solid line, vertical from 640px"
+    }
+  },
+  "components": [
+    {
+      "name": "Booking Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ribbon-red call to action for booking a call.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a call</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--color-accent,#9a3324);color:var(--color-paper,#f3eee2);font-family:\"Courier Prime\",ui-monospace,monospace;font-size:.875rem;padding:12px 24px;border-radius:2px;text-decoration:none;transition:background-color .15s}.ds-btn-primary:hover{background:var(--color-accent-soft,#7a281c)}.ds-btn-primary:focus-visible{outline:2px solid var(--color-accent,#9a3324);outline-offset:3px}"
+    },
+    {
+      "name": "Submit Button",
+      "kind": "button",
+      "refersTo": "button-submit",
+      "description": "Ink block that inks red on hover; form submit.",
+      "html": "<button class=\"ds-btn-submit\">Send</button>",
+      "css": ".ds-btn-submit{background:var(--color-ink,#221f1a);color:var(--color-paper,#f3eee2);font-family:\"Courier Prime\",ui-monospace,monospace;font-size:.875rem;padding:12px 24px;border:0;border-radius:2px;cursor:pointer;transition:background-color .15s}.ds-btn-submit:hover{background:var(--color-accent,#9a3324)}.ds-btn-submit:focus-visible{outline:2px solid var(--color-accent,#9a3324);outline-offset:3px}.ds-btn-submit:disabled{opacity:.6;cursor:not-allowed}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Typed field with uppercase label.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-input\" type=\"email\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:6px;font-family:\"Courier Prime\",ui-monospace,monospace}.ds-field-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--color-muted,#6b6255)}.ds-input{font:inherit;background:var(--color-paper,#f3eee2);color:var(--color-ink,#221f1a);border:1px solid var(--color-line,#d5ccb8);border-radius:2px;padding:8px 12px;outline:none}.ds-input:focus{border-color:var(--color-accent,#9a3324)}.ds-input:focus-visible{outline:2px solid var(--color-accent,#9a3324);outline-offset:3px}"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Outlined deliverable tag on process steps.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag\">Scope doc</li><li class=\"ds-tag\">Estimate</li></ul>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}.ds-tag{font-family:\"Courier Prime\",ui-monospace,monospace;font-size:.875rem;color:var(--color-muted,#6b6255);border:1px solid var(--color-line,#d5ccb8);border-radius:2px;padding:4px 12px}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "Fixed header with blackletter nameplate, contact link, language toggle, and ink rule band with reading progress.",
+      "html": "<header class=\"ds-mast\"><span class=\"ds-mast-loc\">Medellín</span><a class=\"ds-mast-name\" href=\"#\">Luisa Alzate</a><span class=\"ds-mast-right\"><a class=\"ds-mast-link\" href=\"#\">Contact</a><span class=\"ds-lang\"><a class=\"ds-on\" href=\"#\">EN</a> / <a href=\"#\">ES</a></span></span><span class=\"ds-mast-rule\"><span></span></span></header>",
+      "css": ".ds-mast{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;height:3.5rem;padding:0 32px;background:var(--color-paper,#f3eee2);font-family:\"Courier Prime\",ui-monospace,monospace}.ds-mast-loc{font-size:.75rem;color:var(--color-muted,#6b6255)}.ds-mast-name{font-family:UnifrakturMaguntia,Newsreader,serif;font-size:1.875rem;line-height:1;color:var(--color-ink,#221f1a);text-decoration:none}.ds-mast-right{display:flex;justify-content:flex-end;align-items:center;gap:24px;font-size:.875rem}.ds-mast-link{color:var(--color-accent,#9a3324);text-decoration:underline;text-decoration-color:var(--color-line,#d5ccb8);text-underline-offset:4px}.ds-mast-link:hover{color:var(--color-accent-soft,#7a281c);text-decoration-color:currentColor}.ds-lang{font-size:.75rem;color:var(--color-muted,#6b6255)}.ds-lang a{color:var(--color-muted,#6b6255);text-decoration:none}.ds-lang a:hover{color:var(--color-ink,#221f1a)}.ds-lang a.ds-on{color:var(--color-accent,#9a3324)}.ds-mast-rule{position:absolute;left:0;right:0;bottom:0;height:3px;border-bottom:1px solid var(--color-ink,#221f1a)}.ds-mast-rule span{display:block;height:2px;width:40%;background:var(--color-accent,#9a3324)}"
+    },
+    {
+      "name": "Section Break",
+      "kind": "custom",
+      "description": "Heavy ink rule over a hairline at column width, then a news-serif headline and typed body.",
+      "html": "<section class=\"ds-sec\"><div class=\"ds-sec-rule\"></div><h2 class=\"ds-h2\">How I work</h2><p class=\"ds-body\">A short, plain account of each step, typed the way a letter is.</p></section>",
+      "css": ".ds-sec{padding:32px 24px;max-width:48rem}.ds-sec-rule{height:6px;border-top:3px solid var(--color-ink,#221f1a);border-bottom:1px solid var(--color-ink,#221f1a);margin-bottom:40px}.ds-h2{font-family:Newsreader,Georgia,serif;font-weight:700;font-size:3rem;line-height:1.05;letter-spacing:-.018em;color:var(--color-ink,#221f1a);margin:0;text-wrap:balance}.ds-body{font-family:\"Courier Prime\",ui-monospace,monospace;line-height:1.625;color:var(--color-muted,#6b6255);max-width:36rem;margin-top:12px}"
+    },
+    {
+      "name": "Lead with Drop Cap",
+      "kind": "custom",
+      "description": "Lead paragraph whose first letter drops three lines in the news serif.",
+      "html": "<p class=\"ds-lead\">Independent software engineer building custom products, integrations and modernizations for small teams.</p>",
+      "css": ".ds-lead{font-family:\"Courier Prime\",ui-monospace,monospace;font-size:1.125rem;line-height:1.625;color:var(--color-muted,#6b6255);max-width:36rem}.ds-lead::first-letter{float:left;font-family:Newsreader,Georgia,serif;font-weight:800;font-size:3.6em;line-height:.82;margin:.06em .1em 0 0;color:var(--color-ink,#221f1a)}"
+    },
+    {
+      "name": "Printed Photograph",
+      "kind": "card",
+      "description": "Grayscale halftone-screened photo in an ink frame with italic caption.",
+      "html": "<figure class=\"ds-photo\"><div class=\"ds-photo-frame\"><div class=\"ds-photo-img\"></div></div><figcaption>Luisa teaching a software workshop.</figcaption></figure>",
+      "css": ".ds-photo{margin:0;width:240px;font-family:\"Courier Prime\",ui-monospace,monospace}.ds-photo-frame{position:relative;isolation:isolate;aspect-ratio:4/5;border:1px solid var(--color-ink,#221f1a);background:var(--color-paper-soft,#ebe4d3);overflow:hidden}.ds-photo-img{position:absolute;inset:0;background:linear-gradient(160deg,#9a948a,#3a352e);filter:grayscale(1) contrast(1.12);mix-blend-mode:multiply}.ds-photo-frame::after{content:\"\";position:absolute;inset:0;background-image:radial-gradient(circle at center,rgb(34 31 26/.34) .9px,transparent 1.3px);background-size:3.5px 3.5px;mix-blend-mode:multiply}.ds-photo figcaption{margin-top:8px;font-size:.75rem;font-style:italic;color:var(--color-muted,#6b6255)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Typed Letter, Set as a Broadsheet",
+    "overview": "The page is one personal letter from Luisa to the visitor, typed on a manuscript typewriter and then printed as a single-edition newspaper. The letter supplies the voice: every paragraph, label, caption and control is set in Courier Prime, and there is one ribbon-red ink for the few things that ask to be acted on. The broadsheet supplies the structure, added at the user's request: a blackletter nameplate in the fixed masthead, a dateline band under it, news-serif headlines, a drop cap on each lead paragraph, heavy-over-hairline rules between sections, column rules between side-by-side facts, and grayscale halftone photographs with italic captions.\n\nEverything sits on one continuous sheet of warm newsprint. The paper texture is fixed over the whole viewport and above every layer, so ink, photographs and chrome all read as printed on the same stock rather than as a texture placed behind content. Depth comes from print, never from lift: no shadows, no cards, no floating surfaces.\n\nDensity is that of a letter, not a front page: one text column (48rem) centered on the sheet, generous vertical rhythm, sections separated by a rule rather than by full-viewport emptiness. The broadsheet devices frame the letter; they never turn it into a multi-column news grid.",
+    "keyCharacteristics": [
+      "Warm newsprint ground with a fixed grain, fibre and mottle overlay above all content.",
+      "Three faces with fixed jobs: blackletter for the nameplate only, news serif for headlines, typewriter for everything read.",
+      "One accent ink (ribbon red) for calls to action, active states, service headlines and reading progress.",
+      "Rules, not boxes: a double rule under the masthead, a heavy-over-hairline rule between sections, hairlines between list items and columns.",
+      "Printed photographs: grayscale, multiplied into the paper, halftone-screened, ink-bordered, captioned in italic.",
+      "Near-square corners (2px) on every control; no pills."
+    ],
+    "rules": [
+      {
+        "name": "The One Ribbon Rule",
+        "body": "Ribbon Red is the only chromatic ink. Tech logos, photographs, icons and texture are all ink or grayscale; nothing else on the sheet carries hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Secondary Voice Rule",
+        "body": "Secondary text has one color. Do not introduce a third, lighter text gray; `faint` exists only as a name for `muted`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Typed Body Rule",
+        "body": "Anything meant to be read as prose, labels, captions, buttons, navigation or form copy is Courier Prime. Newsreader is for headlines and drop caps only; it never sets a paragraph.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Nameplate Rule",
+        "body": "Blackletter appears once: the masthead name. Never set a heading, number or ornament in it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Same Stock Rule",
+        "body": "The paper texture sits above content, not behind it. Any new surface, photo or control is printed on the same sheet; never lift one above the texture or give it its own background image.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Lift Rule",
+        "body": "No box-shadows, no elevated cards, no blur. If something needs separation, rule it.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set every paragraph, label, caption, button and control in Courier Prime, and every headline in Newsreader.",
+      "Do separate sections with the heavy-over-hairline ink rule at column width, and items with a single Column Rule hairline.",
+      "Do print every photograph through the halftone treatment, in a 1px ink frame, with an italic caption.",
+      "Do keep Ribbon Red for action, active state, focus, selection, progress and service headlines.",
+      "Do keep corners at 2px on anything interactive.",
+      "Do keep the newsprint overlay fixed above all content and non-interactive.",
+      "Do honor reduced motion: typed headlines render complete, the services reel falls back to the stacked list, smooth scrolling turns off."
+    ],
+    "donts": [
+      "Don't add shadows, elevated cards, glass or blur; depth is ink and rules.",
+      "Don't use pill shapes or large radii on buttons, fields or tags.",
+      "Don't set blackletter anywhere except the masthead nameplate.",
+      "Don't set body copy in Newsreader, or headlines in Courier.",
+      "Don't introduce a second chromatic color, or tint logos and icons; they print in ink.",
+      "Don't split the page into a multi-column news grid; the letter keeps one text column, with columns only for short side-by-side facts.",
+      "Don't add new typing animations beyond the three shipped headline placements."
+    ]
+  }
+}

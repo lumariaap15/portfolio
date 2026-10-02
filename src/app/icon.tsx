@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Favicon generado: iniciales "LA" sobre el gradiente de marca.
+// Favicon generado: iniciales "LA" en negro sobre blanco, acento ámbar.
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
@@ -16,8 +16,10 @@ export default function Icon() {
           justifyContent: "center",
           fontSize: 34,
           fontWeight: 700,
-          color: "#000000",
-          backgroundImage: "linear-gradient(140deg, #ffac41, #ff1e56)",
+          color: "#221f1a",
+          backgroundColor: "#f6f3ec",
+          border: "3px solid #9a3324",
+          borderRadius: 14,
           fontFamily: "sans-serif",
         }}
       >
